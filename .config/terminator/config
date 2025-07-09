@@ -1,0 +1,173 @@
+[global_config]
+  inactive_color_offset = 0.4013605442176871
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  ask_before_closing = never
+  always_split_with_profile = True
+  link_single_click = True
+[keybindings]
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  split_horiz = <Primary><Alt>minus
+  split_vert = <Primary><Alt>backslash
+  resize_up = <Shift><Alt>k
+  resize_down = <Shift><Alt>j
+  resize_left = <Shift><Alt>h
+  resize_right = <Shift><Alt>l
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
+  switch_to_tab_10 = <Alt>0
+  layout_launcher = ""
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    background_darkness = 0.91
+    background_type = transparent
+    cursor_bg_color = "#708284"
+    font = Hack Nerd Font 13
+    foreground_color = "#ebdbb2"
+    scrollback_infinite = True
+    palette = "#7d8b8f:#b23a52:#789b6a:#b9ac4a:#2a7fac:#bd4f5a:#44a799:#d2d8d9:#888888:#f24840:#80c470:#ffeb62:#4196ff:#fc5275:#53cdbd:#d2d8d9"
+    use_system_font = False
+    use_theme_colors = True
+    bold_is_bright = True
+    copy_on_selection = True
+    title_hide_sizetext = True
+    title_transmit_fg_color = "#2a2a2a"
+    title_transmit_bg_color = "#99c1f1"
+    title_receive_fg_color = "#2a2a2a"
+    title_receive_bg_color = "#ffbe6f"
+    title_inactive_fg_color = "#deddda"
+    title_inactive_bg_color = "#2a2a2a"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+  [[setup_4_tab]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 26:23
+      maximised = False
+      fullscreen = False
+      size = 1824, 959
+      title = quake-terminator
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = 1_up, 2_up, 3_up, 4_up
+      last_active_term = b413ee61-ecfe-4e08-a1d0-5c0ca17863da, 35a1655d-f802-420a-b3cc-4dbf75a08198, 2ecf5898-3b40-461c-866f-59cc271268c2, a9c50eb2-85bc-4756-b6a0-62c24269ab33
+      active_page = 0
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = b413ee61-ecfe-4e08-a1d0-5c0ca17863da
+    [[[child3]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 908
+      ratio = 0.49972482113373695
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = default
+      uuid = 0493289f-e806-4f02-8717-40e597a2be2d
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      profile = default
+      uuid = 35a1655d-f802-420a-b3cc-4dbf75a08198
+    [[[child6]]]
+      type = HPaned
+      parent = child1
+      order = 2
+      position = 908
+      ratio = 0.49972482113373695
+    [[[terminal7]]]
+      type = Terminal
+      parent = child6
+      order = 0
+      profile = default
+      uuid = f32a503d-dcd0-4d8f-aa05-1d5f44c50dcd
+    [[[child8]]]
+      type = VPaned
+      parent = child6
+      order = 1
+      position = 458
+      ratio = 0.5005464480874317
+    [[[terminal9]]]
+      type = Terminal
+      parent = child8
+      order = 0
+      profile = default
+      uuid = 58033e0b-384f-4a98-b89b-22b82693650e
+    [[[terminal10]]]
+      type = Terminal
+      parent = child8
+      order = 1
+      profile = default
+      uuid = 2ecf5898-3b40-461c-866f-59cc271268c2
+    [[[child11]]]
+      type = VPaned
+      parent = child1
+      order = 3
+      position = 458
+      ratio = 0.5005464480874317
+    [[[child12]]]
+      type = HPaned
+      parent = child11
+      order = 0
+      position = 908
+      ratio = 0.49972482113373695
+    [[[terminal13]]]
+      type = Terminal
+      parent = child12
+      order = 0
+      profile = default
+      uuid = 7fa4349b-a29a-4cfd-8c6a-442663929478
+    [[[terminal14]]]
+      type = Terminal
+      parent = child12
+      order = 1
+      profile = default
+      uuid = 57cf51d1-f856-48eb-9c98-1ced294c5d24
+    [[[child15]]]
+      type = HPaned
+      parent = child11
+      order = 1
+      position = 908
+      ratio = 0.49972482113373695
+    [[[terminal16]]]
+      type = Terminal
+      parent = child15
+      order = 0
+      profile = default
+      uuid = a9c50eb2-85bc-4756-b6a0-62c24269ab33
+    [[[terminal17]]]
+      type = Terminal
+      parent = child15
+      order = 1
+      profile = default
+      uuid = 28e25830-bfe3-48a2-a578-27572372ce00
+[plugins]

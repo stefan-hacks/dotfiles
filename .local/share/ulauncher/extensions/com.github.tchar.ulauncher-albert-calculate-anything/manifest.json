@@ -1,0 +1,133 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Calculate Anything",
+  "description": "An extension to calculate anything, from currency and unit conversion to percentage, time and complex calculations",
+  "developer_name": "Tilemachos Charalampous",
+  "icon": "calculate_anything/images/icon.svg",
+  "options": {
+    "query_debounce": 0.05
+  },
+  "preferences": [
+    {
+      "id": "calc_kw",
+      "type": "keyword",
+      "name": "Calculate Anything",
+      "description": "Calculate expressions, percentages",
+      "default_value": "="
+    },
+    {
+      "id": "time_kw",
+      "type": "keyword",
+      "name": "Calculate Anything: Time",
+      "description": "Convert time to other timezones",
+      "default_value": "time"
+    },
+    {
+      "id": "dec_kw",
+      "type": "keyword",
+      "name": "Calculate Anything: Dec",
+      "description": "Calculate and convert dec",
+      "default_value": "dec"
+    },
+    {
+      "id": "hex_kw",
+      "type": "keyword",
+      "name": "Calculate Anything: Hex",
+      "description": "Calculate and convert hex",
+      "default_value": "hex"
+    },
+    {
+      "id": "oct_kw",
+      "type": "keyword",
+      "name": "Calculate Anything: Oct",
+      "description": "Calculate and convert oct",
+      "default_value": "oct"
+    },
+    {
+      "id": "bin_kw",
+      "type": "keyword",
+      "name": "Calculate Anything: Bin",
+      "description": "Calculate and convert bin",
+      "default_value": "bin"
+    },
+    {
+      "id": "currency_provider",
+      "type": "select",
+      "name": "Currency Provider",
+      "description": "Your currency provider that requires an API Key",
+      "default_value": "fixerio",
+      "options": [
+        {"value": "internal", "text": "Internal"},
+        {"value": "fixerio", "text": "fixer.io + Internal"}
+      ]
+    },
+    {
+      "id": "currency_provider_protocol",
+      "type": "select",
+      "name": "Currency provider protocol",
+      "description": "Your currency provider protocol",
+      "default_value": "http",
+      "options": [
+        {"value": "http", "text": "http"},
+        {"value": "https", "text": "https"}
+      ]
+    },
+    {
+      "id": "api_key",
+      "type": "input",
+      "name": "Currency Provider API Key",
+      "description": "Your currency provider API key",
+      "default_value": ""
+    },
+    {
+      "id": "cache",
+      "type": "select",
+      "name": "Currency Cache",
+      "description": "Cache currency exchange rates for a specified duration",
+      "default_value": "86400",
+      "options": [
+        {"value": "0", "text": "None"},
+        {"value": "86400", "text": "1 day"},
+        {"value": "604800", "text": "1 Week"},
+        {"value": "1209600", "text": "2 Weeks"},
+        {"value": "2629746", "text": "1 Month"},
+        {"value": "31556952", "text": "1 Year"}
+      ]
+    },
+    {
+      "id": "default_currencies",
+      "type": "input",
+      "name": "Default Currencies",
+      "desciption": "A comma separated list of currencies to display if not target currency is specified (works only when cache enabled)",
+      "default_value": "USD,EUR,GBP,CAD"
+    },
+    {
+      "id": "default_cities",
+      "type": "input",
+      "name": "Default Cities",
+      "desciption": "A comma separated list of cities to display local time",
+      "default_value": "New York City US, London GB, Madrid ES, Vancouver CA, Athens GR"
+    },
+    {
+      "id": "units_conversion_mode",
+      "type": "select",
+      "name": "Units Conversion mode",
+      "default_value": "normal",
+      "options": [
+        {"value": "normal", "text": "Normal"},
+        {"value": "crazy", "text": "CRAZY!!!"}
+      ]
+    },
+    {
+      "id": "show_empty_placeholder",
+      "type": "select",
+      "name": "Empty Placeholder",
+      "description": "Show empty placeholder when there is no result",
+      "default_value": "n",
+      "options": [
+        {"value": "y", "text": "Yes"},
+        {"value": "n", "text": "No"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Gnome Calculator",
+  "description": "Query results from Gnome calculator",
+  "developer_name": "Doeke Buursma",
+  "icon": "images/icon.svg",
+  "options": {
+    "query_debounce": 0.05
+  },
+  "preferences": [
+    {
+      "id": "calculator_kw",
+      "type": "keyword",
+      "name": "Gnome Calculator",
+      "default_value": "calc"
+    }
+  ]
+}

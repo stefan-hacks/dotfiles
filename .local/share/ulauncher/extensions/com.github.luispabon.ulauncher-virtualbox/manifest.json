@@ -1,0 +1,26 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "VirtualBox",
+  "description": "Starts your Virtualbox machines",
+  "developer_name": "Luis Pabon",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "kw_vbox",
+      "type": "keyword",
+      "name": "vbox",
+      "description": "Virtualbox keyword",
+      "default_value": "vbox"
+    },
+    {
+      "id": "vbox_exec",
+      "type": "input",
+      "name": "vbox_exec",
+      "description": "Full path to the VirtualBoxVM executable (not VirtualBox, not VBoxManage)",
+      "default_value": "/usr/lib/virtualbox/VirtualBoxVM"
+    }
+  ]
+}

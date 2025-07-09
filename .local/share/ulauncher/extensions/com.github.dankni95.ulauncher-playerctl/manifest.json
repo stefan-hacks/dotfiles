@@ -1,0 +1,41 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Music player controller",
+  "description": "Controll Music Players using ULauncher",
+  "developer_name": "Dankni95",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "playerctl",
+      "type": "keyword",
+      "name": "Music player",
+      "description": "Extension keyword",
+      "default_value": "m"
+    },
+    {
+      "id": "change_icon_theme",
+      "type": "select",
+      "name": "Change icon theme",
+      "description": "Icon theme color",
+      "default_value": true,
+      "options": [
+        { "value": true, "text": "Dark" },
+        { "value": false, "text": "Light" }
+      ]
+    },
+    {
+      "id": "player_volume",
+      "type": "select",
+      "name": "EXPERIMENTAL: Player volume control",
+      "description": "Control players volume, by default global volume is controlled. Please visit github for more information!",
+      "default_value": false,
+      "options": [
+        { "value": false, "text": "Global volume" },
+        { "value": true, "text": "Global and player" }
+      ]
+    }
+  ]
+}

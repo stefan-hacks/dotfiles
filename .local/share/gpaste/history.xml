@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history version="2.0">
+  <item kind="Text" uuid="dd1abcee-67b9-485c-98f3-e5dcb255eaef">
+    <value><![CDATA[alias ffg='kitten icat -n --place 40x60@0x4 --scale-up --align left $HOME/.config/fastfetch/giphy.gif | fastfetch --logo-width 35 --raw -']]></value>
+  </item>
+  <item kind="Text" uuid="f626ebee-033d-4a9a-8ce1-cb7daddd92a1">
+    <value><![CDATA[--align]]></value>
+  </item>
+  <item kind="Text" uuid="7efc45a9-c5d9-449d-877c-80e39934b993">
+    <value><![CDATA[flatpak install io.github.realmazharhussain.GdmSettings]]></value>
+  </item>
+  <item kind="Text" uuid="b18a0452-bd70-4b6a-b1b8-f3a0e2c6f9f0">
+    <value><![CDATA[dconf load / <"$HOME/dotfiles/backups/gnome_settings.bak"]]></value>
+  </item>
+  <item kind="Text" uuid="1172e5d4-13cc-4ea1-99cf-2eae81609dbc">
+    <value><![CDATA[cd $HOME/gitprojects/
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo make dkms_install]]></value>
+  </item>
+  <item kind="Text" uuid="620f8e88-1491-457b-9ac8-f903353a0687">
+    <value><![CDATA[sudo apt update
+sudo apt install imagemagick]]></value>
+  </item>
+  <item kind="Text" uuid="5420a935-7d18-4138-bcd0-00879af889ea">
+    <value><![CDATA[git clone https://github.com/vinceliuice]]></value>
+  </item>
+  <item kind="Text" uuid="b8aea6a6-2148-4006-9cbe-b0b8e1372689">
+    <value><![CDATA[git clone https://github.com/vinceliuice/grub2-themes.git "$HOME/gitprojects/grub2-themes"
+cp "$HOME/Pictures/wallpapers/wallpaper_001.jpg" "$HOME/gitprojects/grub2-themes/background.jpg"
+sudo "$HOME/gitprojects/grub2-themes/install.sh" -s 1080p -b -t whitesur]]></value>
+  </item>
+  <item kind="Text" uuid="87f9db75-6f0c-417b-939c-7f92168acdfd">
+    <value><![CDATA[git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git "$HOME/Downloads/Tela-circle-icon-theme"
+"$HOME/Downloads/Tela-circle-icon-theme/install.sh"]]></value>
+  </item>
+  <item kind="Text" uuid="1dfd3162-5f57-4c8d-a9ff-d91cecee9b10">
+    <value><![CDATA[brew install gcc $(cat "$HOME/dotfiles/backups/brew_list.bak")]]></value>
+  </item>
+  <item kind="Text" uuid="7c2d1bc3-10c2-407a-87df-94efa54c9506">
+    <value><![CDATA[flatpak install -y $(cat "$HOME/dotfiles/backups/flatpaks_list.bak")]]></value>
+  </item>
+  <item kind="Text" uuid="95e906e7-172d-4212-988b-c6f40d2789dc">
+    <value><![CDATA[stow --adopt . &amp;&amp; git restore .]]></value>
+  </item>
+  <item kind="Text" uuid="767f2699-a0ce-47b4-a6d8-6f3f60049c95">
+    <value><![CDATA[/home/h4ck3r/.local/kitty.app/bin/kitty]]></value>
+  </item>
+  <item kind="Text" uuid="afcda254-f346-4d3b-9731-7485378df084">
+    <value><![CDATA[sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty]]></value>
+  </item>
+  <item kind="Text" uuid="1c258a71-a352-4bb0-9173-47bb26801c59">
+    <value><![CDATA[sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
+if [ -f /usr/bin/gnome-terminal ]; then
+  sudo mv /usr/bin/gnome-terminal /usr/bin/gnome-terminal.bak
+fi
+echo -e '#!/usr/bin/env bash
+kitty "$@"' | sudo tee /usr/bin/gnome-terminal &gt; /dev/null
+sudo chmod 755 /usr/bin/gnome-terminal]]></value>
+  </item>
+  <item kind="Text" uuid="ad36841f-fbad-4abe-a3d6-b934d26e97de">
+    <value><![CDATA[echo 'Defaults passprompt="[sudo] password for %u: 🔒 "' | sudo tee /etc/sudoers.d/00_prompt_lock &gt; /dev/null]]></value>
+  </item>
+  <item kind="Text" uuid="5e907335-ebf3-4409-a39f-5a0210e8d34e">
+    <value><![CDATA[https://github.com/d4rkb4sh8/dotfiles_kali.git]]></value>
+  </item>
+  <item kind="Text" uuid="8d84f332-e21c-4ae1-a13f-97c984108a49">
+    <value><![CDATA[sudo snap install snap-store]]></value>
+  </item>
+  <item kind="Text" uuid="2e76d966-7606-4e02-b0ed-a4a261aaf127">
+    <value><![CDATA[sudo snap install snapd]]></value>
+    <value mime="text-html"><![CDATA[PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPjxwcmUgY2xhc3M9InAtY29kZS1zbmlwcGV0X19ibG9jay0taWNvbiBpcy13cmFwcGVkIj48Y29kZSBpZD0ic25pcHBldC1kaXN0cm8taW5zdGFsbC1jb21tYW5kLTIiPnN1ZG8gc25hcCBpbnN0YWxsIHNuYXBkPC9jb2RlPjwvcHJlPg==]]></value>
+  </item>
+  <item kind="Text" uuid="6701e2c2-46f1-4d1b-913a-243b6561f471">
+    <value><![CDATA[# Create symbolic links to add kitty and kitten to PATH (assuming ~/.local/bin is in
+# your system-wide PATH)
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+# Place the kitty.desktop file somewhere it can be found by the OS
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+# If you want to open text files and images in kitty via your file manager also add the kitty-open.desktop file
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+# Update the paths to the kitty and its icon in the kitty desktop file(s)
+sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+# Make xdg-terminal-exec (and hence desktop environments that support it use kitty)
+echo 'kitty.desktop' &gt; ~/.config/xdg-terminals.list]]></value>
+  </item>
+  <item kind="Text" uuid="abd6b844-dad4-4058-8916-9b163a722162">
+    <value><![CDATA[HOME/dotfiles/backups/gnome_settings.bak]]></value>
+  </item>
+  <item kind="Text" uuid="af8e0f06-0370-4507-95fb-1c1ef674f7a6">
+    <value><![CDATA[sudo aa-enforce /etc/apparmor.d/*]]></value>
+  </item>
+  <item kind="Text" uuid="e47faea5-43c5-4bb1-bc5e-bb3785c5949b">
+    <value><![CDATA[aa-enforce]]></value>
+  </item>
+  <item kind="Text" uuid="8468e4bc-f0b5-47bd-b1ea-f28512318d66">
+    <value><![CDATA[curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh]]></value>
+  </item>
+  <item kind="Text" uuid="73b9436a-668a-43be-951f-300b2fcdcbb1">
+    <value><![CDATA[curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh]]></value>
+    <value mime="text-html"><![CDATA[PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPjxwcmU+PGNvZGUgY2xhc3M9ImRiIHctMTAwIGNvcHlhYmxlIGhsanMgYmFzaCI+Y3VybCAtLXByb3RvIDxzcGFuIGNsYXNzPSJobGpzLXN0cmluZyI+Jz1odHRwcyc8L3NwYW4+IC0tdGxzdjEuMiAtc1NmIGh0dHBzOi8vc2gucnVzdHVwLnJzIHwgc2g8L2NvZGU+PC9wcmU+]]></value>
+  </item>
+  <item kind="Text" uuid="3dd01df5-cc6e-4a24-8780-e475f0e62b03">
+    <value><![CDATA[curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh]]></value>
+    <value mime="text-html"><![CDATA[PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPjxwcmU+PGNvZGUgY2xhc3M9ImRiIHctMTAwIGNvcHlhYmxlIGhsanMgYmFzaCI+Y3VybCAtLXByb3RvIDxzcGFuIGNsYXNzPSJobGpzLXN0cmluZyI+Jz1odHRwcyc8L3NwYW4+IC0tdGxzdjEuMiAtc1NmIGh0dHBzOi8vc2gucnVzdHVwLnJzIHwgc2g8L2NvZGU+PC9wcmU+]]></value>
+  </item>
+  <item kind="Text" uuid="a76f4b6e-05b3-4c3c-90ec-a6250f30b1f1">
+    <value><![CDATA[curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin]]></value>
+  </item>
+  <item kind="Text" uuid="e65b47b2-d034-42f8-a7d7-44dfde51ad45">
+    <value><![CDATA[which sh]]></value>
+  </item>
+  <item kind="Text" uuid="c54cd4aa-affe-4e81-b367-3b4215c1d22e">
+    <value><![CDATA[mkdir -p ~/.config/systemd/user]]></value>
+  </item>
+  <item kind="Text" uuid="9c769f61-de51-43b1-bda3-07fe8966f2dc">
+    <value><![CDATA[systemctl --user daemon-reload
+systemctl --user enable kanata.service
+systemctl --user start kanata.service
+systemctl --user status kanata.service   # check whether the service is running]]></value>
+  </item>
+  <item kind="Text" uuid="71b87e1a-5127-4d78-aee1-88431fc40afd">
+    <value><![CDATA[sudo modprobe uinput]]></value>
+  </item>
+  <item kind="Text" uuid="79103022-ef83-47d0-9a3c-b0284c4e33f1">
+    <value><![CDATA[ls -l /dev/uinput]]></value>
+  </item>
+  <item kind="Text" uuid="a6883dfa-b9c2-419f-8f57-5353c454a2e1">
+    <value><![CDATA[sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger]]></value>
+  </item>
+  <item kind="Text" uuid="690c56fc-0f81-464d-a2bc-46715cb9321e">
+    <value><![CDATA[KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"]]></value>
+  </item>
+  <item kind="Text" uuid="7c5e2940-ebd7-4c89-96b2-676a4a4182bc">
+    <value><![CDATA[/etc/udev/rules.d/99-input.rules]]></value>
+    <value mime="text-html"><![CDATA[PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPjxwIGRpcj0iYXV0byI+PGNvZGU+L2V0Yy91ZGV2L3J1bGVzLmQvOTktaW5wdXQucnVsZXM8L2NvZGU+PC9wPg==]]></value>
+  </item>
+  <item kind="Text" uuid="23b9e66e-5283-45d9-87c6-d135d6b7d22c">
+    <value><![CDATA[sudo usermod -aG input h4ck3r
+sudo usermod -aG uinput h4ck3r]]></value>
+  </item>
+  <item kind="Text" uuid="87b5f6c5-1c4b-44b9-b15c-07e0bb272317">
+    <value><![CDATA[sudo groupadd uinput]]></value>
+  </item>
+  <item kind="Text" uuid="13294b95-cc19-4948-bf58-590f3ce5a2e9">
+    <value><![CDATA[systemctl status]]></value>
+  </item>
+  <item kind="Text" uuid="7860dbfb-572a-45f4-90e3-e1accfd1ed72">
+    <value><![CDATA[sudo systemctl enable fail2ban.service
+sudo systemctl start fail2ban.service]]></value>
+  </item>
+  <item kind="Text" uuid="e83f13f9-ef4e-4d55-8db9-64f86e8c298b">
+    <value><![CDATA[sudo apt install python3-systemd]]></value>
+  </item>
+  <item kind="Text" uuid="fbd12d54-4396-4f53-864d-b00b264b65ff">
+    <value><![CDATA[[sshd]
+backend=systemd
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3]]></value>
+  </item>
+  <item kind="Text" uuid="51e6d6f8-4d9f-4e95-960f-eebca816a36e">
+    <value><![CDATA[sudo nano /etc/fail2ban/jail.local]]></value>
+  </item>
+  <item kind="Text" uuid="eb4ec5e9-4ac6-4953-9edf-bf5f36407ecd">
+    <value><![CDATA[sudo cp /etc/fail2ban/fail2ban.conf /etc/fail2ban/fail2ban.local
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local]]></value>
+  </item>
+  <item kind="Text" uuid="3683cf2a-0527-4a08-80d7-3cd3ac6eb3a8">
+    <value><![CDATA[sudo apt install -y $(cat "$HOME/dotfiles/backups/apt_list.bak")]]></value>
+  </item>
+  <item kind="Text" uuid="a1e3f4b9-ce72-43eb-9e73-52b01f9b0604">
+    <value><![CDATA[mkdir -p ~/.local/share/fonts
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip -O /tmp/Hack.zip
+unzip -q /tmp/Hack.zip -d ~/.local/share/fonts
+fc-cache -fv]]></value>
+  </item>
+  <item kind="Text" uuid="b8674218-05ff-4b4d-8a63-1a9f199a6487">
+    <value><![CDATA[liblcms2-dev]]></value>
+    <value mime="text-html"><![CDATA[PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPjxsaT48cD48Y29kZSBjbGFzcz0iZG9jdXRpbHMgbGl0ZXJhbCBub3RyYW5zbGF0ZSI+PHNwYW4gY2xhc3M9InByZSI+bGlibGNtczItZGV2PC9zcGFuPjwvY29kZT48L3A+PC9saT4=]]></value>
+  </item>
+</history>

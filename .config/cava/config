@@ -1,0 +1,13 @@
+[color]
+; Enable gradient mode (1 = enabled)
+gradient = 1
+
+; Baby Blue color in HEX (#89CFF0)
+gradient_color_1 = '#89CFF0'  ; Base color
+gradient_color_2 = '#89CFF0'  ; Same for solid color
+
+; Optional: Set background to default/transparent
+background = 'default'
+
+; Optional: Set foreground (text) color if needed
+; foreground = '#89CFF0'

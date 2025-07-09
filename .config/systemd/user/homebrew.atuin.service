@@ -1,0 +1,12 @@
+[Unit]
+Description=Homebrew generated unit for atuin
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart="/home/linuxbrew/.linuxbrew/opt/atuin/bin/atuin" "daemon"
+Restart=always
+StandardOutput=append:/home/linuxbrew/.linuxbrew/var/log/atuin.log
+StandardError=append:/home/linuxbrew/.linuxbrew/var/log/atuin.log

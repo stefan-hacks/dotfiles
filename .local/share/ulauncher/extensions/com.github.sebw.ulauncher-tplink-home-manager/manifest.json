@@ -1,0 +1,39 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "TPLink Smart Home Manager",
+  "description": "Manage your TPLink Smart Home devices",
+  "developer_name": "Sebastien Wains",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.05
+  },
+  "preferences": [
+    {
+      "id": "tpl_kw",
+      "type": "keyword",
+      "name": "TPLink Smart Home Manager",
+      "default_value": "tplink"
+    },
+    {
+      "id": "debug",
+      "type": "text",
+      "name": "Display IP address and model?",
+      "default_value": "False",
+      "description": "Values: True, False"
+    },
+    {
+      "id": "plug_ip",
+      "type": "text",
+      "name": "Smart Plug IP addresses, separated by a space",
+      "description": "Supported models: HS100, HS110",
+      "default_value": ""
+    },
+    {
+      "id": "bulb_ip",
+      "type": "text",
+      "name": "Smart Bulb IP addresses, separated by a space",
+      "description": "Supported model: KS60",
+      "default_value": ""
+    }
+  ]
+}

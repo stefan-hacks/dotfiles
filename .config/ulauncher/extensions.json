@@ -1,0 +1,163 @@
+{
+    "com.github.ygun.ulauncher-nm": {
+        "id": "com.github.ygun.ulauncher-nm",
+        "url": "https://github.com/ygun/ulauncher-nm",
+        "updated_at": "2025-07-06T00:11:37.740921",
+        "last_commit": "036a0b3b24fb325f7aa648872c916d04966e7101",
+        "last_commit_time": "2021-02-03T13:17:59"
+    },
+    "com.github.kazumasan.ulauncher-sessions": {
+        "id": "com.github.kazumasan.ulauncher-sessions",
+        "url": "https://github.com/Kazumasan/ulauncher-sessions",
+        "updated_at": "2025-07-06T00:11:41.162402",
+        "last_commit": "d999aeb6db95695e82119c898d0e657d25320a4e",
+        "last_commit_time": "2021-08-13T20:20:23"
+    },
+    "com.github.hillaryychan.ulauncher-fzf": {
+        "id": "com.github.hillaryychan.ulauncher-fzf",
+        "url": "https://github.com/hillaryychan/ulauncher-fzf",
+        "updated_at": "2025-07-06T00:11:42.688697",
+        "last_commit": "e452a16dfa9f22c00f0524c3b18c50eaba6f2fcf",
+        "last_commit_time": "2025-05-24T08:29:47"
+    },
+    "com.github.brpaz.ulauncher-mitmproxy": {
+        "id": "com.github.brpaz.ulauncher-mitmproxy",
+        "url": "https://github.com/brpaz/ulauncher-mitmproxy",
+        "updated_at": "2024-04-23T13:03:59.405796",
+        "last_commit": "eca7610cc27e4da5a8888a680b96a04dbb11665f",
+        "last_commit_time": "2022-06-13T10:53:30"
+    },
+    "com.github.mepowerleo10.ulauncher-dict-en": {
+        "id": "com.github.mepowerleo10.ulauncher-dict-en",
+        "url": "https://github.com/mepowerleo10/ulauncher-dict-en",
+        "updated_at": "2025-07-06T00:11:46.330837",
+        "last_commit": "78babcd05dff825a580a7192fc14ee73775784f2",
+        "last_commit_time": "2023-04-03T09:26:35"
+    },
+    "com.github.atorresg.appimagelauncher": {
+        "id": "com.github.atorresg.appimagelauncher",
+        "url": "https://github.com/atorresg/appimagelauncher",
+        "updated_at": "2025-07-06T00:11:47.817977",
+        "last_commit": "cce21696649de6e0bc45172a9a5c320f1f55ed68",
+        "last_commit_time": "2023-07-26T00:57:43"
+    },
+    "com.github.rmassidda.ulauncher-firefox-history": {
+        "id": "com.github.rmassidda.ulauncher-firefox-history",
+        "url": "https://github.com/rmassidda/ulauncher-firefox-history",
+        "updated_at": "2025-07-06T00:11:49.584956",
+        "last_commit": "b1d8e9399a466fe7c8dccd2f6d94ad014a260812",
+        "last_commit_time": "2024-03-01T22:15:25"
+    },
+    "com.github.brpaz.ulauncher-file-search": {
+        "id": "com.github.brpaz.ulauncher-file-search",
+        "url": "https://github.com/brpaz/ulauncher-file-search",
+        "updated_at": "2025-07-06T00:11:51.406286",
+        "last_commit": "0ea61c2049b27f1ddfa81d1844876f21dd9d6e7b",
+        "last_commit_time": "2020-07-03T13:30:16"
+    },
+    "com.github.ruudjelinssen.ulauncher-imdb": {
+        "id": "com.github.ruudjelinssen.ulauncher-imdb",
+        "url": "https://github.com/ruudjelinssen/ulauncher-imdb",
+        "updated_at": "2024-06-28T14:47:19.547146",
+        "last_commit": "308c0d9c27f29185708e11c5e44f405b68a04dbd",
+        "last_commit_time": "2019-12-07T20:24:49"
+    },
+    "com.github.glovecc.ulauncher-github-search": {
+        "id": "com.github.glovecc.ulauncher-github-search",
+        "url": "https://github.com/Glovecc/ulauncher-github-search",
+        "updated_at": "2025-07-06T00:11:54.084721",
+        "last_commit": "ee3ea43e905cf184449c328f0dadaa4395f3ec0c",
+        "last_commit_time": "2022-01-14T13:46:35"
+    },
+    "com.github.luispabon.ulauncher-virtualbox": {
+        "id": "com.github.luispabon.ulauncher-virtualbox",
+        "url": "https://github.com/luispabon/ulauncher-virtualbox",
+        "updated_at": "2025-07-06T00:11:55.916120",
+        "last_commit": "d8f495df3c7f41ee8493b207d17f06fc0372c84e",
+        "last_commit_time": "2020-09-23T01:29:15"
+    },
+    "com.github.manahter.ulauncher-ip-analysis": {
+        "id": "com.github.manahter.ulauncher-ip-analysis",
+        "url": "https://github.com/manahter/ulauncher-IP-Analysis",
+        "updated_at": "2025-07-06T00:11:58.253680",
+        "last_commit": "ea408404cd5c860664e770bd49c03fcaa3681116",
+        "last_commit_time": "2021-12-29T16:25:34"
+    },
+    "com.github.gbarre.ulauncher-terminator": {
+        "id": "com.github.gbarre.ulauncher-terminator",
+        "url": "https://github.com/gbarre/ulauncher-terminator",
+        "updated_at": "2025-07-06T00:11:59.670038",
+        "last_commit": "1450499056178fb25a6830a847f63ba385ae7f9d",
+        "last_commit_time": "2025-04-02T08:36:04"
+    },
+    "com.github.ubuntupunk.ulauncher-vim": {
+        "id": "com.github.ubuntupunk.ulauncher-vim",
+        "url": "https://github.com/ubuntupunk/ulauncher-vim",
+        "updated_at": "2025-07-06T00:12:00.978795",
+        "last_commit": "d5ef71e2711487326e856a1c40486005199890cb",
+        "last_commit_time": "2025-01-08T06:48:20"
+    },
+    "com.github.ulauncher.ulauncher-hash": {
+        "id": "com.github.ulauncher.ulauncher-hash",
+        "url": "https://github.com/Ulauncher/ulauncher-hash",
+        "updated_at": "2025-07-06T00:12:04.595757",
+        "last_commit": "237dbb3610ff04df993c3223b12df42cb7df221f",
+        "last_commit_time": "2022-09-04T14:29:55"
+    },
+    "com.github.dhelmr.ulauncher-tldr": {
+        "id": "com.github.dhelmr.ulauncher-tldr",
+        "url": "https://github.com/dhelmr/ulauncher-tldr",
+        "updated_at": "2025-07-06T00:12:06.207277",
+        "last_commit": "2e5904451bf89dfa155280dfb6fa3d45ed4cab4c",
+        "last_commit_time": "2023-07-29T11:06:30"
+    },
+    "com.github.sebw.ulauncher-tplink-home-manager": {
+        "id": "com.github.sebw.ulauncher-tplink-home-manager",
+        "url": "https://github.com/sebw/ulauncher-tplink-home-manager/",
+        "updated_at": "2025-07-06T00:12:11.565660",
+        "last_commit": "c613196294c9db9216ab2eef394f32c784b38149",
+        "last_commit_time": "2019-12-14T15:41:03"
+    },
+    "com.github.nastuzzisamy.ulauncher-youtube-search": {
+        "id": "com.github.nastuzzisamy.ulauncher-youtube-search",
+        "url": "https://github.com/NastuzziSamy/ulauncher-youtube-search",
+        "updated_at": "2025-07-06T00:12:13.095864",
+        "last_commit": "fe855811358b2f15ec6ed69ca18e20639874fa28",
+        "last_commit_time": "2021-03-27T11:29:18"
+    },
+    "com.github.doekeb.ulauncher-gnome-calculator": {
+        "id": "com.github.doekeb.ulauncher-gnome-calculator",
+        "url": "https://github.com/Doekeb/ulauncher-gnome-calculator",
+        "updated_at": "2025-07-06T00:12:14.396138",
+        "last_commit": "f1efd61c6ecd1160b007bca1f90511a346378e64",
+        "last_commit_time": "2021-05-03T15:30:01"
+    },
+    "com.github.fajtak.ulauncher-weather": {
+        "id": "com.github.fajtak.ulauncher-weather",
+        "url": "https://github.com/fajtak/ulauncher-weather",
+        "updated_at": "2025-07-06T00:12:16.196671",
+        "last_commit": "996da704e505776753f6340755d20f03075c2be8",
+        "last_commit_time": "2022-04-05T18:23:30"
+    },
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2025-07-06T00:12:18.008780",
+        "last_commit": "7dedd992709fa2297735cddf852404144d4da47c",
+        "last_commit_time": "2023-11-14T16:53:20"
+    },
+    "com.github.dankni95.ulauncher-playerctl": {
+        "id": "com.github.dankni95.ulauncher-playerctl",
+        "url": "https://github.com/Dankni95/ulauncher-playerctl",
+        "updated_at": "2025-07-06T00:12:19.782485",
+        "last_commit": "c2efafd66c3d60445a545f9f202b82202f93cd70",
+        "last_commit_time": "2022-03-23T21:18:25"
+    },
+    "com.github.ultiblog.ulauncher-password-generator": {
+        "id": "com.github.ultiblog.ulauncher-password-generator",
+        "url": "https://github.com/Ultiblog/ULauncher-Password-Generator",
+        "updated_at": "2025-07-06T00:12:21.460103",
+        "last_commit": "de08e6b3ce1c58e4f2b23321702ba40fa2110f73",
+        "last_commit_time": "2022-11-11T12:05:05"
+    }
+}

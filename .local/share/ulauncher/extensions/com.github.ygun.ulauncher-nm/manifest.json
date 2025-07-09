@@ -1,0 +1,54 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "NetworkManager",
+  "description": "Quick access to nm-cli",
+  "developer_name": "alsvartr, ygun",
+  "icon": "images/icon.svg",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "nm",
+      "type": "keyword",
+      "name": "nm - List all profiles",
+      "description": "Quick access to all NM profiles & settings",
+      "default_value": "nm"
+    },
+    {
+      "id": "nm-vpn",
+      "type": "keyword",
+      "name": "vpn - List VPN profiles",
+      "description": "Quick access to NM VPN profiles",
+      "default_value": "vpn"
+    },
+    {
+      "id": "nm-wifi",
+      "type": "keyword",
+      "name": "wifi - List WIFI networks",
+      "description": "Quick access to NM available WIFI networks",
+      "default_value": "wifi"
+    },
+    {
+      "id": "nms",
+      "type": "keyword",
+      "name": "nms - List settings",
+      "description": "Quick access to NM settings",
+      "default_value": "nms"
+    },
+    {
+      "id": "rescan_interval",
+      "type": "input",
+      "name": "Rescan WIFI interval (in seconds)",
+      "description": "Time interval of WIFI networks rescan",
+      "default_value": "120"
+    },
+    {
+      "id": "rescan_wait",
+      "type": "input",
+      "name": "Rescan WIFI wait time",
+      "description": "How much time to wait for wifi networks rescan results (in seconds)",
+      "default_value": "2"
+    }
+  ]
+}

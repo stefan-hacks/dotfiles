@@ -1,0 +1,140 @@
+(defcfg
+  process-unmapped-keys yes
+  log-layer-changes no
+)
+
+;; Variables
+(defvar
+ tap-time 200
+ hold-time 200
+)
+
+;; Defsrc contains the original unmapped keyboard layout. Often this is qwerty.
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12 
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; Aliases
+(defalias
+  al (tap-hold $tap-time $hold-time a lsft)
+  ss (tap-hold $tap-time $hold-time s lmet)
+  dd (tap-hold $tap-time $hold-time d lalt)
+  ff (tap-hold $tap-time $hold-time f lctl)
+  hh (tap-hold $tap-time $hold-time h S-grv)
+  jj (tap-hold $tap-time $hold-time j rctl)
+  kk (tap-hold $tap-time $hold-time k ralt)
+  ll (tap-hold $tap-time $hold-time l rmet)
+  ar (tap-hold $tap-time $hold-time ; rsft)
+  capm (tap-hold $tap-time $hold-time esc grv)
+  escm  (tap-hold $tap-time $hold-time caps scln)
+  la (tap-hold $tap-time $hold-time bspc del)
+  ra (tap-hold $tap-time $hold-time ret ralt)
+  yy (tap-hold $tap-time $hold-time y home) 
+  uu (tap-hold $tap-time $hold-time u pgdn)
+  ii (tap-hold $tap-time $hold-time i pgup)
+  oo (tap-hold $tap-time $hold-time o end)
+  aa (tap-hold $tap-time $hold-time a C-a)
+  zz (tap-hold $tap-time $hold-time z C-z)
+  xx (tap-hold $tap-time $hold-time x C-x)
+  cc (tap-hold $tap-time $hold-time c C-c)
+  vv (tap-hold $tap-time $hold-time v C-v)
+  tbd (tap-hold $tap-time $hold-time , C-w)
+  tfd (tap-hold $tap-time $hold-time . A-d)
+  dtb (tap-hold $tap-time $hold-time [ C-u)
+  dte (tap-hold $tap-time $hold-time ] C-k)
+  dwb (tap-hold $tap-time $hold-time , C-bspc)
+  dwf (tap-hold $tap-time $hold-time . C-del)
+  nn (tap-hold $tap-time $hold-time n 0)
+  mm (tap-hold $tap-time $hold-time m S-4)
+  l2 (tap-hold $tap-time $hold-time lmet (layer-toggle two))   
+  l3 (tap-hold $tap-time $hold-time rmet (layer-toggle three)) 
+  l4 (tap-hold $tap-time $hold-time rctl (layer-toggle four))
+  l5 (tap-hold $tap-time $hold-time rctl (layer-toggle five))
+  qtd (tap-hold $tap-time $hold-time C-A-q C-A-q)
+  pum (tap-hold $tap-time $hold-time A-f2 A-f2)
+  dsb (tap-hold $tap-time $hold-time C-M-down C-M-down) 
+  isb (tap-hold $tap-time $hold-time C-M-up C-M-up)
+  mut (tap-hold $tap-time $hold-time A-f5 A-f5)
+  vdn (tap-hold $tap-time $hold-time A-f6 A-f6)
+  vup (tap-hold $tap-time $hold-time A-f7 A-f7)
+  mic (tap-hold $tap-time $hold-time A-f8 A-f8)
+  psc (tap-hold $tap-time $hold-time A-f9 A-f9)
+  lts (tap-hold $tap-time $hold-time C-A-M-l C-A-M-l)
+  dsl (tap-hold $tap-time $hold-time A-f11 A-f11)
+  dsr (tap-hold $tap-time $hold-time A-f12 A-f12)
+  bdl (tap-hold $tap-time $hold-time [ C-bspc)
+  fdl (tap-hold $tap-time $hold-time ] S-C-del)
+  wtl (tap-hold $tap-time $hold-time S-M-pgup S-M-pgup)
+  wtr (tap-hold $tap-time $hold-time S-M-pgdn S-M-pgdn)
+  rpl (tap-hold $tap-time $hold-time M-left M-left)
+  rpd (tap-hold $tap-time $hold-time M-down M-down)
+  rpu (tap-hold $tap-time $hold-time M-up M-up)
+  rpr (tap-hold $tap-time $hold-time M-rght M-rght)
+  mpp (tap-hold $tap-time $hold-time C-M-/ C-M-/)
+  msf (tap-hold $tap-time $hold-time C-M-. C-M-.)
+  msb (tap-hold $tap-time $hold-time C-M-, C-M-,)
+  mwl (mwheel-left 50 120)
+  mwd (mwheel-down 50 120)
+  mwu (mwheel-up 50 120)
+  mwr (mwheel-right 50 120)
+)
+
+;; LAYER ONE - main mods
+(deflayer one
+  caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    @yy  @uu  @ii  @oo  p    @bdl @fdl \
+  esc  @aa  @ss  @dd  @ff  g    @hh  @jj  @kk  @ll  ;    '    ret
+  lsft @zz  @xx  @cc  @vv  b    n    m    @dwb @dwf /    rsft
+  @l2  @l3  @la           spc             @ra  @l4  @l5
+)
+
+;; Workspaces, Windows, Panes layer - left hand on left Ctrl key  
+(deflayer two 
+  caps @qtd @pum @dsb @isb @mut @vdn @vup @mic @psc @lts _    _
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    @wtl @dsl @dsr @wtr p    _    _    \
+  esc  _    _    _    _    g    @rpl @rpd @rpu @rpr _    _  ret
+  lsft _    _    _    _    b    @nn  @mm  @msb @msf @mpp rsft
+  _    _    _           spc               _    _    _
+)
+
+
+;; Navigation layer - left hand on left win/super/cmd key               
+(deflayer three                                                           
+  caps @qtd @pum @dsb @isb @mut @vdn @vup @mic @psc @lts _    _      
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc 
+  tab  q    w    e    r    t    @mwl @mwd @mwu @mwr p    @dtb @dte \    
+  esc  _    _    _    _    g    left down up   rght bspc del  ret       
+  lsft _    _    _    _    b    @nn  @mm  @tbd @tfd /    rsft           
+  _    _    _           spc               _    _    _                   
+)
+
+;; Symbols layer - right hand on right win/super/cmd key 
+(deflayer four 
+  caps f1   f2   f3    f4   f5   f6   f7   f8   f9   f10  f11  lrld
+  grv  1    2    3     4    5    6    7    8    9    0    -    =    bspc
+  tab  S-1  S-2  S-3   S-4  S-5  _    _    _    _    p    _    _    \
+  esc  S-6  S-7  S-8   -    S--  S-`  _    _    _    ;    '    ret
+  lsft =    S-=  S-;   ;    grv  n    m    _    _    /    rsft
+  _    _    _           spc                _    _    _
+)
+
+;; Brackets layer - right hand on right ctrl key 
+(deflayer five 
+  caps f1   f2   f3    f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3     4    5    6    7    8    9    0    -    =    bspc
+  tab  S-9  S-0  [     ]    S-\  _    _    _    _    p    _    _    \
+  esc  S-[  S-]  S-,   S-.  S-;  S-grv _    _    _    ;    '    ret
+  lsft \    /    '     S-'  grv  _    _    _    _    /    rsft
+  _    _    _           spc                _    _    _
+) 
+
+
+;; lrld is a default shortcut to reload the configuration found on layer 4 in place of f12 
+

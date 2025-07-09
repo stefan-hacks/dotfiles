@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="kitty.desktop" score="103" last-seen="1751734819"/>
+    <application id="org.gnome.tweaks.desktop" score="9" last-seen="1751730929"/>
+    <application id="org.gnome.FileRoller.desktop" score="0" last-seen="1751729806"/>
+    <application id="org.gnome.Software.desktop" score="13" last-seen="1751734104"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="14" last-seen="1751734453"/>
+    <application id="software-properties-gtk.desktop" score="2" last-seen="1751731416"/>
+    <application id="gnome-background-panel.desktop" score="0" last-seen="0"/>
+    <application id="org.gnome.GPaste.Ui.desktop" score="0" last-seen="1751728541"/>
+    <application id="org.gnome.Nautilus.desktop" score="10" last-seen="1751734551"/>
+    <application id="Popcorn-Time.desktop" score="2" last-seen="1751730833"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="26" last-seen="1751734543"/>
+    <application id="gnome-initial-setup.desktop" score="1" last-seen="1751725308"/>
+    <application id="org.gnome.Terminal.desktop" score="327" last-seen="1751731134"/>
+    <application id="org.onlyoffice.desktopeditors.desktop" score="1" last-seen="1751734588"/>
+    <application id="ulauncher.desktop" score="2" last-seen="1751734628"/>
+    <application id="org.gnome.Extensions.desktop" score="0" last-seen="1751725430"/>
+    <application id="org.gnome.Settings.desktop" score="28" last-seen="1751734488"/>
+    <application id="firefox-esr.desktop" score="388" last-seen="1751734836"/>
+  </context>
+</application-state>

@@ -1,0 +1,61 @@
+# THEMES 
+# theme = xcodedarkhc
+
+theme = Adwaita Dark
+
+# CURSORS AND SHADERS
+#custom-shader = ./shaders/cursor_blaze.glsl
+#alpha-blending = native
+
+# FONTS 
+font-size = 13
+font-family = Hack Nerd Font
+font-feature = liga
+
+
+# BACKGROUND 
+#background = f9f9f9
+
+# OPACITY 
+# background-opacity = 0.9
+# background-blur-radius = 20
+unfocused-split-opacity = 0.70
+
+# FOREGROUND 
+#foreground = f9f9f9
+
+# MOUSE 
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 1
+
+# WINDOWS DECORATIONS 
+window-decoration = true
+
+# RELOAD THE CONFIG 
+keybind = shift+ctrl+r=reload_config
+
+# SPLITS
+#unfocused-split-fill = RRGGBB
+#split-divider-color = RRGGBB
+
+# Create Splits
+keybind = ctrl+alt+\=new_split:right
+keybind = ctrl+alt+-=new_split:down
+
+# navigate to Splits
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+
+# resize Splits
+keybind = shift+alt+h=resize_split:left,10
+keybind = shift+alt+j=resize_split:down,10
+keybind = shift+alt+k=resize_split:up,10
+keybind = shift+alt+l=resize_split:right,10
+
+# equalize all Splits
+keybind = ctrl+alt+e=equalize_splits
+
+
+

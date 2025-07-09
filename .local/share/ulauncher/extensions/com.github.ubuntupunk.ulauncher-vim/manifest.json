@@ -1,0 +1,19 @@
+{
+  "required_api_version": "2",
+  "name": "Vim Prompter",
+  "description": "Vim cheatsheet helper",
+  "developer_name": "David Robert Lewis",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "vm_kw",
+      "type": "keyword",
+      "name": "Vim",
+      "description": "Search for Vim commands",
+      "default_value": "vm"
+    }
+  ]
+}

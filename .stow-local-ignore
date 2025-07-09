@@ -1,0 +1,46 @@
+bootstrap_complete.sh
+sys_admin
+apt_list.bak
+change_default_kali_terminal.md
+pure_bash_bible.md
+add_lock_icon_visudo.md
+bootstrap.sh
+fail2ban_instructions.md
+kanata_linux_instructions.md
+system_backup.sh
+custom_prompt_for_root_user_bashrc.md
+settings_backup.sh
+ansible
+brew_list.bak
+flatpaks_list.bak
+gnome_settings.bak
+grub.bak
+keyboard-layout.png
+snap_list.bak
+vlc_skins
+bin
+misc
+LICENSE
+^/.*\.org
+text_for_rootbashrc.txt
+RCS
+.+,v
+
+CVS
+#\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+\.gitmodules
+
+#.+~          # emacs backup files
+#\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING

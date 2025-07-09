@@ -1,0 +1,91 @@
+name: Benchmark
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - ".github/**"
+      - "!.github/workflows/benchmark-linux.yml"
+      - "docs/**"
+      - "misc/**"
+      - "__init__.py"
+      - ".gitignore"
+      - "LICENSE"
+      - "main.py"
+      - "manifest.json"
+      - "README.md"
+      - "versions.json"
+jobs:
+  benchmark:
+    name: Performance regression check
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        include:
+          - os: ubuntu-latest
+            path: ~/.cache
+        python-version: ["3.9"]
+    env:
+      SECRETS_PERSONAL_GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      BENCHMARKS_BRANCH: gh-pages
+      VERSION: v1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pip requirements
+        uses: actions/cache@v4
+        with:
+          path: ${{ matrix.path }}
+          key: ${{ matrix.os }}-${{ matrix.python-version }}-pip-${{ env.VERSION }}-${{ hashFiles('requirements/dev-requirements.txt') }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.python-version }}-pip-${{ env.VERSION }}-
+      - name: Restore tox requirements
+        uses: actions/cache@v4
+        with:
+          path: .tox
+          key: ${{ matrix.os }}-${{ matrix.python-version }}-tox-${{ hashFiles('requirements/*requirements.txt') }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.python-version }}-tox-
+      # Setup python
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dev dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements/dev-requirements.txt
+        # Run benchmark
+      - name: Run benchmark
+        run: |
+          tox -e benchmark
+        # Download previous benchmark result from cache (if exists)
+      - name: Download previous benchmark data
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: actions/cache@v4
+        with:
+          path: ./cache
+          key: ${{ matrix.os }}-${{ matrix.python-version }}-benchmark
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.python-version }}-benchmark
+        # Store benchmark results only when branch is master
+      - name: Store benchmark result
+        uses: rhysd/github-action-benchmark@v1
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          tool: "pytest"
+          output-file-path: benchmark-python${{ matrix.python-version }}.json
+          fail-on-alert: true
+          alert-threshold: 200%
+          fail-threshold: 400%
+          alert-comment-cc-users: "@tchar"
+          auto-push: false
+          gh-pages-branch: ${{ env.BENCHMARKS_BRANCH }}
+          benchmark-data-dir-path: benchmarks
+        # Push results to gh-pages only when branch is master
+      - name: Push benchmarks to gh-pages
+        if: ${{ github.ref == 'refs/heads/master' }}
+        env:
+          SECRETS_PERSONAL_GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+        run: git push https://tchar:"$SECRETS_PERSONAL_GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git "$BENCHMARKS_BRANCH":"$BENCHMARKS_BRANCH"

@@ -1,0 +1,160 @@
+2025-07-05 12:52:13,340 | INFO | ulauncher: main() | Ulauncher version 5.15.7
+2025-07-05 12:52:13,340 | INFO | ulauncher: main() | Extension API version 2.0.0
+2025-07-05 12:52:13,341 | INFO | ulauncher: main() | GTK+ 3.24.49
+2025-07-05 12:52:13,341 | INFO | ulauncher: main() | Is Wayland: True
+2025-07-05 12:52:13,341 | INFO | ulauncher: main() | Wayland compatibility: off
+2025-07-05 12:52:13,358 | DEBUG | ulauncher.ui.windows.Builder: __init__() | consider using a pythonic name instead of design name 'input-box'
+2025-07-05 12:52:13,361 | DEBUG | ulauncher.ui.windows.Builder: do_connect() | connect builder by name 'ulauncher_window','destroy', 'on_destroy'
+2025-07-05 12:52:13,361 | DEBUG | ulauncher.ui.windows.Builder: do_connect() | connect builder by name 'ulauncher_window','focus_in_event', 'on_focus_in_event'
+2025-07-05 12:52:13,361 | DEBUG | ulauncher.ui.windows.Builder: do_connect() | connect builder by name 'ulauncher_window','focus_out_event', 'on_focus_out_event'
+2025-07-05 12:52:13,362 | DEBUG | ulauncher.ui.windows.Builder: do_connect() | connect builder by name 'input','key_press_event', 'on_input_key_press_event'
+2025-07-05 12:52:13,362 | DEBUG | ulauncher.ui.windows.Builder: log_unconnected_functions() | Not connected to builder 'on_input_changed'
+2025-07-05 12:52:13,362 | DEBUG | ulauncher.ui.windows.Builder: log_unconnected_functions() | Not connected to builder 'on_mnu_about_activate'
+2025-07-05 12:52:13,362 | DEBUG | ulauncher.ui.windows.Builder: log_unconnected_functions() | Not connected to builder 'on_mnu_close_activate'
+2025-07-05 12:52:13,362 | DEBUG | ulauncher.ui.windows.Builder: log_unconnected_functions() | Not connected to builder 'on_mnu_preferences_activate'
+2025-07-05 12:52:13,362 | DEBUG | ulauncher.ui.windows.Builder: log_unconnected_functions() | Not connected to builder 'on_preferences_dialog_destroyed'
+2025-07-05 12:52:13,364 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:52:13,364 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:52:13,365 | WARNING | ulauncher.utils.Theme: get_current() | No theme with name Eigen Dark
+2025-07-05 12:52:13,370 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 0 results
+2025-07-05 12:52:13,371 | INFO | ulauncher.search.apps.app_watcher: start() | Started scanning desktop dirs
+2025-07-05 12:52:13,371 | INFO | ulauncher.api.server.ExtensionServer: _start_thread() | Starting WS server on port 5054
+2025-07-05 12:52:13,375 | INFO | ulauncher.utils.desktop.reader: read_desktop_file() | Could not read "/usr/share/applications/org.gnome.eog.desktop": constructor returned NULL
+2025-07-05 12:52:13,380 | INFO | ulauncher.utils.desktop.reader: find_apps_cached() | Found 58 apps in cache
+2025-07-05 12:52:13,381 | INFO | ulauncher.utils.desktop.reader: read_desktop_file() | Could not read "/usr/share/gnome/applications/vim.desktop": constructor returned NULL
+2025-07-05 12:52:13,384 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.rayvega96.ulauncher-amazon-search" started. PID 31305
+2025-07-05 12:52:13,384 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.dankni95.ulauncher-playerctl" started. PID 31306
+2025-07-05 12:52:13,389 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.ubuntupunk.ulauncher-vim" started. PID 31308
+2025-07-05 12:52:13,397 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.mepowerleo10.ulauncher-dict-en" started. PID 31311
+2025-07-05 12:52:13,405 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.glovecc.ulauncher-github-search" started. PID 31313
+2025-07-05 12:52:13,441 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.ygun.ulauncher-nm" started. PID 31319
+2025-07-05 12:52:13,448 | INFO | ulauncher.utils.desktop.reader: find_apps_cached() | Found 73 apps in the system
+2025-07-05 12:52:13,448 | INFO | ulauncher.search.apps.app_watcher: start() | Scanned desktop dirs in 0.08 seconds
+2025-07-05 12:52:13,451 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.rmassidda.ulauncher-firefox-history" started. PID 31326
+2025-07-05 12:52:13,455 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.fajtak.ulauncher-weather" started. PID 31329
+2025-07-05 12:52:13,457 | DEBUG | ulauncher.search.apps.app_watcher: start() | Start watching desktop files...
+2025-07-05 12:52:13,462 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.hillaryychan.ulauncher-fzf" started. PID 31334
+2025-07-05 12:52:13,465 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.brpaz.ulauncher-file-search" started. PID 31335
+2025-07-05 12:52:13,477 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.luispabon.ulauncher-virtualbox" started. PID 31337
+2025-07-05 12:52:13,489 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.dhelmr.ulauncher-tldr" started. PID 31340
+2025-07-05 12:52:13,497 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.nastuzzisamy.ulauncher-youtube-search" started. PID 31341
+2025-07-05 12:52:13,505 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.doekeb.ulauncher-gnome-calculator" started. PID 31343
+2025-07-05 12:52:13,519 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.ulauncher.ulauncher-hash" started. PID 31345
+2025-07-05 12:52:13,522 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.manahter.ulauncher-ip-analysis" started. PID 31349
+2025-07-05 12:52:13,527 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.ultiblog.ulauncher-password-generator" started. PID 31351
+2025-07-05 12:52:13,541 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.gbarre.ulauncher-terminator" started. PID 31352
+2025-07-05 12:52:13,561 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.iboyperson.ulauncher-system" started. PID 31354
+2025-07-05 12:52:13,589 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.tchar.ulauncher-albert-calculate-anything" started. PID 31361
+2025-07-05 12:52:13,593 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.atorresg.appimagelauncher" started. PID 31356
+2025-07-05 12:52:13,605 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.sebw.ulauncher-tplink-home-manager" started. PID 31362
+2025-07-05 12:52:13,633 | INFO | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.kazumasan.ulauncher-sessions" started. PID 31364
+2025-07-05 12:52:13,639 | INFO | ulauncher.ui.windows.UlauncherWindow: bind_show_app_hotkey() | Trying to bind app hotkey: <Alt>space
+2025-07-05 12:52:13,650 | INFO | ulauncher.api.server.ExtensionDownloader: download_missing() | Downloading missing extension com.github.brpaz.ulauncher-mitmproxy
+2025-07-05 12:52:13,873 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.ygun.ulauncher-nm" connected
+2025-07-05 12:52:13,873 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.ygun.ulauncher-nm"
+2025-07-05 12:52:13,888 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.gbarre.ulauncher-terminator" connected
+2025-07-05 12:52:13,889 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.gbarre.ulauncher-terminator"
+2025-07-05 12:52:13,914 | ERROR | ulauncher.api.server.ExtensionDownloader: download_missing() | GithubExtensionError: Could not find versions.json file using URL "https://raw.githubusercontent.com/brpaz/ulauncher-mitmproxy/HEAD/versions.json"
+2025-07-05 12:52:13,915 | INFO | ulauncher.api.server.ExtensionDownloader: download_missing() | Downloading missing extension com.github.ruudjelinssen.ulauncher-imdb
+2025-07-05 12:52:13,924 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.rmassidda.ulauncher-firefox-history" connected
+2025-07-05 12:52:13,924 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.rmassidda.ulauncher-firefox-history"
+2025-07-05 12:52:13,967 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.doekeb.ulauncher-gnome-calculator" connected
+2025-07-05 12:52:13,968 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.doekeb.ulauncher-gnome-calculator"
+2025-07-05 12:52:13,973 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.brpaz.ulauncher-file-search" connected
+2025-07-05 12:52:13,973 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.brpaz.ulauncher-file-search"
+2025-07-05 12:52:14,036 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.ultiblog.ulauncher-password-generator" connected
+2025-07-05 12:52:14,037 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.ultiblog.ulauncher-password-generator"
+2025-07-05 12:52:14,133 | ERROR | ulauncher.api.server.ExtensionDownloader: download_missing() | GithubExtensionError: Could not find versions.json file using URL "https://raw.githubusercontent.com/ruudjelinssen/ulauncher-imdb/HEAD/versions.json"
+2025-07-05 12:52:14,197 | ERROR | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.tchar.ulauncher-albert-calculate-anything" was terminated with code 1
+2025-07-05 12:52:14,205 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.fajtak.ulauncher-weather" connected
+2025-07-05 12:52:14,205 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.fajtak.ulauncher-weather"
+2025-07-05 12:52:14,226 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.sebw.ulauncher-tplink-home-manager" connected
+2025-07-05 12:52:14,226 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.sebw.ulauncher-tplink-home-manager"
+2025-07-05 12:52:14,233 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.ubuntupunk.ulauncher-vim" connected
+2025-07-05 12:52:14,233 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.ubuntupunk.ulauncher-vim"
+2025-07-05 12:52:14,234 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.dankni95.ulauncher-playerctl" connected
+2025-07-05 12:52:14,234 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.dankni95.ulauncher-playerctl"
+2025-07-05 12:52:14,242 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.hillaryychan.ulauncher-fzf" connected
+2025-07-05 12:52:14,242 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.hillaryychan.ulauncher-fzf"
+2025-07-05 12:52:14,330 | ERROR | ulauncher.api.server.ExtensionRunner: _run_process() | Extension "com.github.rayvega96.ulauncher-amazon-search" was terminated with code 1
+2025-07-05 12:52:14,350 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.mepowerleo10.ulauncher-dict-en" connected
+2025-07-05 12:52:14,350 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.mepowerleo10.ulauncher-dict-en"
+2025-07-05 12:52:14,363 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.ulauncher.ulauncher-hash" connected
+2025-07-05 12:52:14,363 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.ulauncher.ulauncher-hash"
+2025-07-05 12:52:14,376 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.iboyperson.ulauncher-system" connected
+2025-07-05 12:52:14,376 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.iboyperson.ulauncher-system"
+2025-07-05 12:52:14,399 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.atorresg.appimagelauncher" connected
+2025-07-05 12:52:14,400 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.atorresg.appimagelauncher"
+2025-07-05 12:52:14,403 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.kazumasan.ulauncher-sessions" connected
+2025-07-05 12:52:14,404 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.kazumasan.ulauncher-sessions"
+2025-07-05 12:52:14,406 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.luispabon.ulauncher-virtualbox" connected
+2025-07-05 12:52:14,406 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.luispabon.ulauncher-virtualbox"
+2025-07-05 12:52:14,423 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.nastuzzisamy.ulauncher-youtube-search" connected
+2025-07-05 12:52:14,424 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.nastuzzisamy.ulauncher-youtube-search"
+2025-07-05 12:52:14,425 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.manahter.ulauncher-ip-analysis" connected
+2025-07-05 12:52:14,426 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.manahter.ulauncher-ip-analysis"
+2025-07-05 12:52:14,445 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.dhelmr.ulauncher-tldr" connected
+2025-07-05 12:52:14,445 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.dhelmr.ulauncher-tldr"
+2025-07-05 12:52:14,470 | INFO | ulauncher.api.server.ExtensionController: handleConnected() | Extension "com.github.glovecc.ulauncher-github-search" connected
+2025-07-05 12:52:14,501 | DEBUG | ulauncher.api.server.ExtensionController: _send_event() | Send event PreferencesEvent to "com.github.glovecc.ulauncher-github-search"
+2025-07-05 12:53:28,122 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:53:28,122 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:53:28,124 | WARNING | ulauncher.utils.Theme: get_current() | No theme with name Eigen Dark
+2025-07-05 12:53:28,125 | WARNING | ulauncher.utils.Theme: get_current() | No theme with name Eigen Dark
+2025-07-05 12:53:28,126 | WARNING | ulauncher.utils.Theme: get_current() | No theme with name Eigen Dark
+2025-07-05 12:53:28,126 | WARNING | ulauncher.utils.Theme: get_current() | No theme with name Eigen Dark
+2025-07-05 12:53:28,127 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:53:29,823 | DEBUG | ulauncher.ui.windows.UlauncherWindow: activate_preferences() | create new preferences_dialog
+2025-07-05 12:53:29,836 | DEBUG | ulauncher.ui.windows.Builder: log_unconnected_functions() | Not connected to builder 'on_hotkey_set'
+2025-07-05 12:53:29,836 | DEBUG | ulauncher.ui.windows.Builder: log_unconnected_functions() | Not connected to builder 'on_scheme_callback'
+2025-07-05 12:53:30,044 | DEBUG | ulauncher.ui.windows.Builder: __init__() | consider using a pythonic name instead of design name 'hotkey-dialog-vbox1'
+2025-07-05 12:53:30,044 | DEBUG | ulauncher.ui.windows.Builder: __init__() | consider using a pythonic name instead of design name 'new-hotkey-label'
+2025-07-05 12:53:30,046 | DEBUG | ulauncher.ui.windows.Builder: do_connect() | connect builder by name 'hotkey_dialog','delete_event', 'on_delete_event'
+2025-07-05 12:53:30,047 | DEBUG | ulauncher.ui.windows.Builder: do_connect() | connect builder by name 'hotkey_input','key_press_event', 'on_hotkey_input_key_press_event'
+2025-07-05 12:53:30,371 | INFO | ulauncher.ui.windows.PreferencesUlauncherDialog: prefs_get_all() | API call /get/all
+2025-07-05 12:53:30,372 | WARNING | ulauncher.utils.Theme: get_current() | No theme with name Eigen Dark
+2025-07-05 12:53:34,369 | INFO | ulauncher.ui.windows.PreferencesUlauncherDialog: prefs_set_theme_name() | Set theme-name to liquid-glass-dark
+2025-07-05 12:53:35,748 | INFO | ulauncher.ui.windows.PreferencesUlauncherDialog: prefs_close() | Close preferences
+2025-07-05 12:53:36,839 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:53:36,839 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:53:36,846 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:53:44,935 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:53:44,935 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:53:44,944 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:53:45,854 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 9 results
+2025-07-05 12:53:46,044 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 4 results
+2025-07-05 12:53:46,118 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 5 results
+2025-07-05 12:53:47,235 | INFO | ulauncher.api.shared.action.LaunchAppAction: run() | Run application Extension Manager (/usr/share/applications/com.mattjakeman.ExtensionManager.desktop) Exec ['extension-manager']
+2025-07-05 12:53:47,250 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:53:52,200 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:53:52,200 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:53:52,207 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:54:53,560 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:54:53,560 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:54:53,564 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:55:14,944 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:55:14,944 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:55:14,949 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:55:16,542 | INFO | ulauncher.api.shared.action.LaunchAppAction: run() | Run application Extension Manager (/usr/share/applications/com.mattjakeman.ExtensionManager.desktop) Exec ['extension-manager']
+2025-07-05 12:55:57,113 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:55:57,113 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:55:57,120 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:56:51,301 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:56:51,302 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:56:51,307 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 3 results
+2025-07-05 12:56:52,102 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 9 results
+2025-07-05 12:56:52,218 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 9 results
+2025-07-05 12:56:52,321 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 8 results
+2025-07-05 12:56:52,409 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 8 results
+2025-07-05 12:56:56,240 | INFO | ulauncher.api.shared.action.LaunchAppAction: run() | Run application Firefox ESR (/usr/share/applications/firefox-esr.desktop) Exec ['/usr/lib/firefox-esr/firefox-esr']
+2025-07-05 12:56:56,257 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 4 results
+2025-07-05 12:57:00,226 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:57:00,226 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:57:00,229 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 4 results
+2025-07-05 12:57:02,066 | DEBUG | ulauncher.ui.windows.UlauncherWindow: activate_preferences() | show existing preferences_dialog
+2025-07-05 12:57:03,141 | INFO | ulauncher.ui.windows.PreferencesUlauncherDialog: prefs_get_all() | API call /get/all
+2025-07-05 12:57:07,144 | INFO | ulauncher.ui.windows.PreferencesUlauncherDialog: prefs_set_theme_name() | Set theme-name to dark
+2025-07-05 12:57:08,927 | INFO | ulauncher.ui.windows.PreferencesUlauncherDialog: prefs_close() | Close preferences
+2025-07-05 12:57:10,057 | DEBUG | ulauncher.utils.display: get_screens() | Found 1 monitor(s)
+2025-07-05 12:57:10,057 | DEBUG | ulauncher.utils.display: get_screens() |   Monitor 0 - X: 0, Y: 0, W: 1920, H: 1080
+2025-07-05 12:57:10,064 | DEBUG | ulauncher.ui.windows.UlauncherWindow: show_results() | render 4 results

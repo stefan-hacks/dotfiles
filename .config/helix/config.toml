@@ -1,0 +1,23 @@
+theme = "adwaita-dark"
+#theme = "starlight"
+
+[editor]
+# line-number = "relative" 
+cursorline = true
+bufferline = "multiple"
+mouse = true
+color-modes = true
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-inlay-hints = true

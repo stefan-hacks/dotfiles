@@ -1,0 +1,627 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Color definitions
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+# Configuration
+STATE_FILE="${HOME}/.debian-state.yaml"
+LOG_FILE="/var/log/debian-declare.log"
+SUDO_PROMPT="[sudo] password for %u: 🔒 "
+REQUIRED_CMDS=(yq dconf dpkg flatpak snap brew)
+REQUIRED_PKGS=(yq dconf-cli)
+
+# Symbols
+SUCCESS="${GREEN}✓${RESET}"
+FAILURE="${RED}✗${RESET}"
+WARNING="${YELLOW}⚠${RESET}"
+INFO="${CYAN}ℹ${RESET}"
+
+# Initialize state file structure
+init_state_file() {
+    cat <<EOF > "$STATE_FILE"
+# Debian Declarative State Configuration
+system:
+  hostname: ""
+  timezone: ""
+  kernel_parameters: "mitigations=off"
+  default_shell: "/bin/bash"
+  terminal: "kitty"
+  services:
+    enabled: [fail2ban, ssh, ufw]
+    disabled: []
+  sysctl: {}
+  udev_rules: []
+  kernel_modules: []
+  repositories: []
+  system_packages: []
+
+apt:
+  sources_list: ""
+  sources_d: []
+  preferences: []
+  keys: []
+  packages: []
+  excluded: []
+  ppas: []
+
+flatpak:
+  remotes:
+    - name: flathub
+      url: https://dl.flathub.org/repo/flathub.flatpakrepo
+  apps: []
+
+snap:
+  apps: []
+  classic: []
+
+brew:
+  taps: []
+  packages: []
+
+gnome:
+  settings: ""
+  extensions: []
+  themes:
+    icon: "Tela-circle"
+    shell: ""
+
+security:
+  ufw:
+    default_deny: true
+    rules: []
+  fail2ban:
+    enabled: true
+    jails: []
+  apparmor:
+    enforce: []
+    complain: []
+
+hardware:
+  keyboard_remap:
+    enabled: true
+    config: |
+      (defsrc
+        esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq pause
+        grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc    ins  home pgup
+        tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret     del  end  pgdn
+        caps a    s    d    f    g    h    j    k    l    ;    '    \
+        lsft z    x    c    v    b    n    m    ,    .    /           rsft            up
+        lctl lmet lalt           spc            ralt rmet cmp  rctl      left down rght)
+  drivers: []
+
+user:
+  dotfiles_repo: "https://github.com/d4rkb4sh8/dotfiles_kali.git"
+  dotfiles_path: "\${HOME}/dotfiles"
+  packages: []
+  scripts: []
+
+network:
+  hosts: []
+  resolv_conf: ""
+  interfaces: []
+EOF
+}
+
+# Logging functions
+log() {
+    local level=$1
+    local message=$2
+    local color=""
+    
+    case "$level" in
+        SUCCESS) color="$GREEN" ;;
+        ERROR) color="$RED" ;;
+        WARN) color="$YELLOW" ;;
+        INFO) color="$CYAN" ;;
+        *) color="$RESET" ;;
+    esac
+    
+    echo "${BOLD}${color}[${level}]${RESET} ${message}" | tee -a "$LOG_FILE"
+    echo "$(date +'%Y-%m-%dT%H:%M:%S%z') [${level}] ${message}" >> "$LOG_FILE"
+}
+
+# Dependency checking
+check_dependencies() {
+    local missing=()
+    
+    for cmd in "${REQUIRED_CMDS[@]}"; do
+        if ! command -v "$cmd" &>/dev/null; then
+            missing+=("$cmd")
+        fi
+    done
+    
+    if [ ${#missing[@]} -gt 0 ]; then
+        log ERROR "Missing required commands: ${missing[*]}"
+        log INFO "Attempting to install missing packages..."
+        sudo apt update
+        sudo apt install -y "${REQUIRED_PKGS[@]}"
+    fi
+    
+    # Check for yq after installation attempt
+    if ! command -v yq &>/dev/null; then
+        log ERROR "yq is required but not installed. Please install it manually:"
+        echo "  sudo apt install yq"
+        echo "  or"
+        echo "  sudo snap install yq"
+        exit 1
+    fi
+}
+
+# Backup functions
+backup_apt() {
+    log INFO "Backing up APT configuration..."
+    local apt_state
+    
+    # Backup sources.list
+    apt_state=$(yq eval '.apt.sources_list = load("/etc/apt/sources.list")' -n)
+    
+    # Backup package list
+    apt_state=$(echo "$apt_state" | yq eval ".apt.packages = [$(dpkg-query -f '"{.Package}", ' -W | sed 's/, $//')]")
+    
+    # Backup preferences
+    if [ -d /etc/apt/preferences.d/ ]; then
+        for file in /etc/apt/preferences.d/*; do
+            apt_state=$(echo "$apt_state" | yq eval ".apt.preferences += [{\"file\": \"$(basename "$file")\", \"content\": \"$(awk '{printf "%s\\n", $0}' "$file")\"}]")
+        done
+    fi
+    
+    # Backup keys
+    apt_state=$(echo "$apt_state" | yq eval ".apt.keys = [$(sudo apt-key list | grep -A1 '^pub' | awk '/^pub/{gsub("/"," ",$2); print $2}' | awk '{print "\""$1"\""}' | tr '\n' ',' | sed 's/,$//')]")
+    
+    # Update state file
+    yq eval-all "select(fileIndex == 0) * select(fileIndex == 1)" "$STATE_FILE" <(echo "$apt_state") -i "$STATE_FILE"
+    log SUCCESS "APT configuration backed up"
+}
+
+backup_flatpak() {
+    if ! command -v flatpak &>/dev/null; then
+        log WARN "Flatpak not installed - skipping backup"
+        return
+    fi
+    
+    log INFO "Backing up Flatpak configuration..."
+    local fp_state
+    
+    # Backup remotes
+    fp_state=$(flatpak remotes --columns=name,url | awk 'NR>1 {print "{\"name\":\""$1"\",\"url\":\""$2"\"}"}' | tr '\n' ',' | sed 's/,$//')
+    fp_state=".flatpak.remotes = [$fp_state]"
+    
+    # Backup apps
+    apps=$(flatpak list --app --columns=application | awk 'NR>1 {print "\""$1"\""}' | tr '\n' ',' | sed 's/,$//')
+    fp_state=$(echo "$fp_state" | yq eval ".flatpak.apps = [$apps]")
+    
+    # Update state file
+    yq eval "$fp_state" -i "$STATE_FILE"
+    log SUCCESS "Flatpak configuration backed up"
+}
+
+backup_gnome() {
+    if ! command -v dconf &>/dev/null; then
+        log WARN "dconf not available - skipping GNOME settings backup"
+        return
+    fi
+    
+    log INFO "Backing up GNOME configuration..."
+    local gnome_settings
+    
+    # Backup settings
+    gnome_settings=$(dconf dump / | awk '{printf "%s\\n", $0}')
+    yq eval ".gnome.settings = \"$gnome_settings\"" -i "$STATE_FILE"
+    
+    # Backup extensions
+    local extensions
+    extensions=$(dconf read /org/gnome/shell/enabled-extensions | tr -d "[]'")
+    yq eval ".gnome.extensions = [\"${extensions//,/\",\"}\"]" -i "$STATE_FILE"
+    
+    # Backup themes
+    local icon_theme
+    icon_theme=$(dconf read /org/gnome/desktop/interface/icon-theme | tr -d "'")
+    yq eval ".gnome.themes.icon = \"$icon_theme\"" -i "$STATE_FILE"
+    
+    log SUCCESS "GNOME configuration backed up"
+}
+
+backup_system() {
+    log INFO "Backing up system configuration..."
+    
+    # Backup hostname
+    yq eval ".system.hostname = \"$(hostname)\"" -i "$STATE_FILE"
+    
+    # Backup timezone
+    yq eval ".system.timezone = \"$(timedatectl show --value -p Timezone)\"" -i "$STATE_FILE"
+    
+    # Backup kernel parameters
+    local kernel_params
+    kernel_params=$(cat /proc/cmdline | sed 's/BOOT_IMAGE=[^ ]* //')
+    yq eval ".system.kernel_parameters = \"$kernel_params\"" -i "$STATE_FILE"
+    
+    # Backup services
+    local enabled_services=()
+    while read -r service; do
+        if systemctl is-enabled "$service" &>/dev/null; then
+            enabled_services+=("\"$service\"")
+        fi
+    done < <(systemctl list-unit-files --type=service --no-legend | awk '{print $1}')
+    yq eval ".system.services.enabled = [${enabled_services[*]}]" -i "$STATE_FILE"
+    
+    # Backup UFW rules
+    local ufw_rules=()
+    while read -r rule; do
+        [ -z "$rule" ] && continue
+        ufw_rules+=("\"$rule\"")
+    done < <(sudo ufw status verbose | grep -v 'Status:')
+    yq eval ".security.ufw.rules = [${ufw_rules[*]}]" -i "$STATE_FILE"
+    
+    log SUCCESS "System configuration backed up"
+}
+
+# Restore functions
+restore_apt() {
+    log INFO "Restoring APT configuration..."
+    
+    # Restore sources.list
+    local sources_list
+    sources_list=$(yq eval '.apt.sources_list' "$STATE_FILE")
+    echo "$sources_list" | sudo tee /etc/apt/sources.list >/dev/null
+    
+    # Add PPAs
+    yq eval '.apt.ppas[]' "$STATE_FILE" | while read -r ppa; do
+        log INFO "Adding PPA: $ppa"
+        sudo add-apt-repository -y "$ppa"
+    done
+    
+    # Add keys
+    yq eval '.apt.keys[]' "$STATE_FILE" | while read -r key; do
+        log INFO "Adding key: $key"
+        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "$key"
+    done
+    
+    # Update package list
+    sudo apt update -y
+    
+    # Install packages
+    local packages
+    packages=$(yq eval '.apt.packages | join(" ")' "$STATE_FILE")
+    if [ -n "$packages" ]; then
+        log INFO "Installing APT packages: $packages"
+        sudo apt install -y $packages
+    fi
+    
+    log SUCCESS "APT configuration restored"
+}
+
+restore_flatpak() {
+    if ! command -v flatpak &>/dev/null; then
+        log WARN "Flatpak not installed - skipping restore"
+        return
+    fi
+    
+    log INFO "Restoring Flatpak configuration..."
+    
+    # Add remotes
+    yq eval '.flatpak.remotes[]' "$STATE_FILE" | while read -r remote; do
+        local name url
+        name=$(echo "$remote" | yq eval '.name')
+        url=$(echo "$remote" | yq eval '.url')
+        
+        if ! flatpak remotes | grep -q "$name"; then
+            log INFO "Adding Flatpak remote: $name ($url)"
+            flatpak remote-add --if-not-exists "$name" "$url"
+        fi
+    done
+    
+    # Install apps
+    local apps
+    apps=$(yq eval '.flatpak.apps | join(" ")' "$STATE_FILE")
+    if [ -n "$apps" ]; then
+        log INFO "Installing Flatpak apps: $apps"
+        flatpak install -y $apps
+    fi
+    
+    log SUCCESS "Flatpak configuration restored"
+}
+
+restore_gnome() {
+    if ! command -v dconf &>/dev/null; then
+        log WARN "dconf not available - skipping GNOME settings restore"
+        return
+    fi
+    
+    log INFO "Restoring GNOME configuration..."
+    
+    # Load settings
+    local settings
+    settings=$(yq eval '.gnome.settings' "$STATE_FILE")
+    echo -e "$settings" | dconf load /
+    
+    # Enable extensions
+    yq eval '.gnome.extensions[]' "$STATE_FILE" | while read -r extension; do
+        log INFO "Enabling GNOME extension: $extension"
+        gnome-extensions enable "$extension"
+    done
+    
+    # Apply themes
+    local icon_theme
+    icon_theme=$(yq eval '.gnome.themes.icon' "$STATE_FILE")
+    if [ -n "$icon_theme" ]; then
+        log INFO "Setting icon theme: $icon_theme"
+        gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+    fi
+    
+    log SUCCESS "GNOME configuration restored"
+}
+
+restore_system() {
+    log INFO "Restoring system configuration..."
+    
+    # Set hostname
+    local hostname
+    hostname=$(yq eval '.system.hostname' "$STATE_FILE")
+    if [ -n "$hostname" ]; then
+        log INFO "Setting hostname: $hostname"
+        sudo hostnamectl set-hostname "$hostname"
+    fi
+    
+    # Set timezone
+    local timezone
+    timezone=$(yq eval '.system.timezone' "$STATE_FILE")
+    if [ -n "$timezone" ]; then
+        log INFO "Setting timezone: $timezone"
+        sudo timedatectl set-timezone "$timezone"
+    fi
+    
+    # Set kernel parameters
+    local kernel_params
+    kernel_params=$(yq eval '.system.kernel_parameters' "$STATE_FILE")
+    if [ -n "$kernel_params" ]; then
+        log INFO "Setting kernel parameters: $kernel_params"
+        sudo sed -i "s|GRUB_CMDLINE_LINUX_DEFAULT=.*|GRUB_CMDLINE_LINUX_DEFAULT=\"$kernel_params\"|" /etc/default/grub
+        sudo update-grub
+    fi
+    
+    # Set default shell
+    local default_shell
+    default_shell=$(yq eval '.system.default_shell' "$STATE_FILE")
+    if [ -n "$default_shell" ]; then
+        log INFO "Setting default shell: $default_shell"
+        sudo chsh -s "$default_shell" "$USER"
+        sudo chsh -s "$default_shell" root
+    fi
+    
+    # Set terminal
+    local terminal
+    terminal=$(yq eval '.system.terminal' "$STATE_FILE")
+    if [ -n "$terminal" ]; then
+        log INFO "Setting default terminal: $terminal"
+        sudo update-alternatives --set x-terminal-emulator "$(which "$terminal")"
+    fi
+    
+    # Configure sudo
+    log INFO "Configuring sudo password prompt..."
+    echo "Defaults passprompt=\"$SUDO_PROMPT\"" | sudo tee /etc/sudoers.d/00_prompt_lock >/dev/null
+    
+    # Enable services
+    yq eval '.system.services.enabled[]' "$STATE_FILE" | while read -r service; do
+        if ! systemctl is-enabled "$service" &>/dev/null; then
+            log INFO "Enabling service: $service"
+            sudo systemctl enable "$service"
+            sudo systemctl start "$service"
+        fi
+    done
+    
+    # Configure UFW
+    if command -v ufw &>/dev/null; then
+        log INFO "Configuring UFW..."
+        sudo ufw --force reset
+        sudo ufw default deny incoming
+        sudo ufw default allow outgoing
+        
+        yq eval '.security.ufw.rules[]' "$STATE_FILE" | while read -r rule; do
+            log INFO "Adding UFW rule: $rule"
+            sudo ufw $rule
+        done
+        
+        sudo ufw enable
+    fi
+    
+    # Configure fail2ban
+    if command -v fail2ban-client &>/dev/null; then
+        log INFO "Configuring fail2ban..."
+        sudo cp /etc/fail2ban/fail2ban.conf /etc/fail2ban/fail2ban.local
+        sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+        sudo sed -i '/\[sshd\]/,/enabled/s/^enabled.*/enabled = true/;/\[sshd\]/,/enabled/s/^backend.*/backend = systemd/' /etc/fail2ban/jail.local
+        
+        yq eval '.security.fail2ban.jails[]' "$STATE_FILE" | while read -r jail; do
+            log INFO "Enabling fail2ban jail: $jail"
+            sudo sed -i "/\[$jail\]/,/enabled/s/^enabled.*/enabled = true/" /etc/fail2ban/jail.local
+        done
+        
+        sudo systemctl enable fail2ban.service
+        sudo systemctl start fail2ban.service
+    fi
+    
+    # Configure Kanata keyboard remapper
+    if command -v kanata &>/dev/null; then
+        log INFO "Configuring Kanata keyboard remapper..."
+        sudo groupadd -f uinput
+        sudo usermod -aG input "$USER"
+        sudo usermod -aG uinput "$USER"
+        echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules >/dev/null
+        sudo udevadm control --reload-rules && sudo udevadm trigger
+        sudo modprobe uinput
+        
+        mkdir -p ~/.config/systemd/user
+        cat <<EOF > ~/.config/systemd/user/kanata.service
+[Unit]
+Description=Kanata keyboard remapper
+Documentation=https://github.com/jtroo/kanata
+
+[Service]
+Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:$HOME/.cargo/bin
+Environment=DISPLAY=:0
+Type=simple
+ExecStart=/usr/bin/sh -c 'exec \$(which kanata) --cfg \${HOME}/.config/kanata/kanata.kbd'
+Restart=no
+
+[Install]
+WantedBy=default.target
+EOF
+        
+        systemctl --user daemon-reload
+        systemctl --user enable kanata.service
+        systemctl --user start kanata.service
+    fi
+    
+    log SUCCESS "System configuration restored"
+}
+
+# Dotfiles management
+manage_dotfiles() {
+    log INFO "Managing dotfiles..."
+    local repo_path
+    
+    repo_path=$(yq eval '.user.dotfiles_path' "$STATE_FILE")
+    repo_path=$(eval echo "$repo_path")  # Expand variables
+    
+    if [ ! -d "$repo_path" ]; then
+        local repo_url
+        repo_url=$(yq eval '.user.dotfiles_repo' "$STATE_FILE")
+        
+        log INFO "Cloning dotfiles repository: $repo_url"
+        git clone "$repo_url" "$repo_path"
+    fi
+    
+    if [ -d "$repo_path" ]; then
+        log INFO "Stowing dotfiles..."
+        cd "$repo_path"
+        
+        # Remove existing configs
+        rm -rf "$HOME/.bashrc"
+        
+        # Stow all packages
+        stow --adopt .
+        git restore .
+        
+        log SUCCESS "Dotfiles configured"
+    else
+        log WARN "Dotfiles path not found: $repo_path"
+    fi
+}
+
+# Main functions
+backup_system_state() {
+    log INFO "Starting system state backup..."
+    check_dependencies
+    
+    if [ ! -f "$STATE_FILE" ]; then
+        log INFO "Initializing new state file: $STATE_FILE"
+        init_state_file
+    fi
+    
+    backup_apt
+    backup_flatpak
+    backup_gnome
+    backup_system
+    
+    log SUCCESS "${BOLD}System state backup completed!${RESET}"
+    log INFO "State file: ${BOLD}$STATE_FILE${RESET}"
+}
+
+restore_system_state() {
+    log INFO "Starting system state restoration..."
+    check_dependencies
+    
+    if [ ! -f "$STATE_FILE" ]; then
+        log ERROR "State file not found: $STATE_FILE"
+        exit 1
+    fi
+    
+    # Initial setup
+    sudo sed -i '/^deb / s/$/ contrib non-free/' /etc/apt/sources.list
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt install -y "${REQUIRED_PKGS[@]}"
+    
+    # Restore configurations
+    restore_apt
+    restore_flatpak
+    restore_system
+    manage_dotfiles
+    restore_gnome
+    
+    # Final steps
+    source "$HOME/.bashrc"
+    sudo update-initramfs -u -k all
+    sudo update-grub
+    
+    log SUCCESS "${BOLD}System state restoration completed!${RESET}"
+    log INFO "A reboot is recommended to apply all changes"
+}
+
+# Help function
+print_help() {
+    echo "${BOLD}${MAGENTA}Debian Declarative System Manager${RESET}"
+    echo "${BOLD}Version: 1.0.0${RESET}"
+    echo
+    echo "${BOLD}Usage:${RESET}"
+    echo "  $0 [command]"
+    echo
+    echo "${BOLD}Commands:${RESET}"
+    echo "  ${GREEN}backup${RESET}    - Backup current system state to ${STATE_FILE}"
+    echo "  ${GREEN}restore${RESET}   - Restore system state from ${STATE_FILE}"
+    echo "  ${GREEN}init${RESET}      - Initialize a new state file"
+    echo "  ${GREEN}help${RESET}      - Show this help message"
+    echo
+    echo "${BOLD}Description:${RESET}"
+    echo "  This tool manages Debian systems declaratively by maintaining a state file"
+    echo "  (${STATE_FILE}) that defines the desired system configuration. The state file"
+    echo "  can be version controlled and used to recreate identical systems."
+    echo
+    echo "${BOLD}Features:${RESET}"
+    echo "  - APT package management"
+    echo "  - Flatpak application management"
+    echo "  - GNOME desktop configuration"
+    echo "  - System settings (hostname, timezone, services)"
+    echo "  - Security configuration (UFW, fail2ban)"
+    echo "  - Dotfiles management"
+    echo "  - Hardware configuration (keyboard remapping)"
+    echo
+    echo "${BOLD}Examples:${RESET}"
+    echo "  $0 init        # Create a new state file"
+    echo "  $0 backup      # Backup current system configuration"
+    echo "  $0 restore     # Apply saved configuration"
+    echo
+    echo "${BOLD}Note:${RESET}"
+    echo "  Some operations require sudo privileges. You may be prompted for your password."
+    echo
+}
+
+# Main execution
+case "${1:-}" in
+    backup)
+        backup_system_state
+        ;;
+    restore)
+        restore_system_state
+        ;;
+    init)
+        init_state_file
+        log SUCCESS "Initialized new state file: ${BOLD}$STATE_FILE${RESET}"
+        ;;
+    help|--help|-h)
+        print_help
+        ;;
+    *)
+        print_help
+        exit 1
+        ;;
+esac

@@ -1,0 +1,94 @@
+name: macOS
+on:
+  push:
+    branches: [master, development]
+    paths-ignore:
+      - ".github/**"
+      - "!.github/workflows/ci-macos.yml"
+      - "docs/**"
+      - "misc/**"
+      - "__init__.py"
+      - ".gitignore"
+      - "LICENSE"
+      - "main.py"
+      - "manifest.json"
+      - "README.md"
+      - "versions.json"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [master, development]
+    paths-ignore:
+      - ".github/**"
+      - "!.github/workflows/ci-macos.yml"
+      - "docs/**"
+      - "misc/**"
+      - "__init__.py"
+      - ".gitignore"
+      - "LICENSE"
+      - "main.py"
+      - "manifest.json"
+      - "README.md"
+      - "versions.json"
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest]
+        include:
+          - os: macos-latest
+            path: ~/Library/Caches/pip
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+    name: OS ${{ matrix.os }} - Python ${{ matrix.python-version }}
+    env:
+      OS: ${{ matrix.os }}
+      PYTHON: ${{ matrix.python-version }}
+      VERSION: v1
+    steps:
+      - uses: actions/github-script@v7
+        id: toxpy
+        with:
+          result-encoding: string
+          script: |
+            return process.env.PYTHON.split('.').join('')
+      - uses: actions/checkout@v4
+      - name: Restore pip requirements
+        uses: actions/cache@v4
+        with:
+          path: ${{ matrix.path }}
+          key: ${{ matrix.os }}-${{ matrix.python-version }}-pip-${{ env.VERSION }}-${{ hashFiles('requirements/dev-requirements.txt') }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.python-version }}-pip-${{ env.VERSION }}-
+      # - name: Restore tox requirements
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: .tox
+      #     key: ${{ matrix.os }}-${{ matrix.python-version }}-tox-${{ env.VERSION }}-${{ hashFiles('requirements/*requirements.txt') }}
+      #     restore-keys: |
+      #       ${{ matrix.os }}-${{ matrix.python-version }}-tox-${{ env.VERSION }}-
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements/dev-requirements.txt
+      - name: Test and generate report
+        env:
+          TOXPY: ${{steps.toxpy.outputs.result}}
+        # run: |
+        #   tox -e clean,py${{ env.TOXPY }},babel_py${{ env.TOXPY }},coverage
+        run: |
+          tox -e clean,py${{ env.TOXPY }},coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          name: os:${{ matrix.os }}-python:${{ matrix.python-version }}
+          directory: ./cover/xml
+          files: coverage.xml
+          env_vars: OS,PYTHON
+          fail_ci_if_error: true
+          flags: unittests
+          verbose: true
+          token: ${{ secrets.CODECOV_TOKEN }}

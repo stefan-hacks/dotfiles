@@ -1,0 +1,25 @@
+{
+  "required_api_version": "2",
+  "name": "Ulauncher Terminator",
+  "description": "Open Terminator in a specific folder",
+  "developer_name": "Guillaume Barré",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "keyword",
+      "type": "keyword",
+      "name": "Ulauncher Terminator",
+      "default_value": "term"
+    },
+    {
+      "id": "max_results",
+      "type": "input",
+      "name": "Maximum Results",
+      "description": "Limit the number of displayed results",
+      "default_value": "5"
+    }
+  ]
+}

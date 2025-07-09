@@ -1,0 +1,96 @@
+{
+    "required_api_version": "^2.0.0",
+    "name": "Amazon Search",
+    "description": "This extension provides you a fast query search on your favorite amazon website.",
+    "developer_name": "Francesco Emanuele Conti (Rayvega96)",
+    "icon": "images/icon.ico",
+    "options": {
+      "query_debounce": 0.05
+    },
+    "preferences": [
+      {
+        "id": "defaultwebsite",
+        "type": "select",
+        "name": "Default Amazon Website",
+        "description": "Default amazon website called by 'amz' keyword.",
+        "default_value": "amzus",
+        "options": [
+          {"value": "amzit", "text": "Amazon.it (Amazon Italy)"},
+          {"value": "amzuk", "text": "Amazon.co.uk (Amazon United Kingdom)"},
+          {"value": "amzsp", "text": "Amazon.es (Amazon Spain)"},
+          {"value": "amznl", "text": "Amazon.nl (Amazon Netherlands)"},
+          {"value": "amzge", "text": "Amazon.de (Amazon Germany)"},
+          {"value": "amzfr", "text": "Amazon.fr (Amazon France)"},
+          {"value": "amzca", "text": "Amazon.ca (Amazon Canada)"},
+          {"value": "amzus", "text": "Amazon.com (Amazon United States)"},
+          {"value": "amzmx", "text": "Amazon.com.mx (Amazon Mexico)"},
+          {"value": "amzbr", "text": "Amazon.com.br (Amazon Brazil)"},
+          {"value": "amzjp", "text": "Amazon.co.jp (Amazon Japan)"},
+          {"value": "amzin", "text": "Amazon.in (Amazon India)"},
+          {"value": "amzcn", "text": "Amazon.cn (Amazon China)"},
+          {"value": "amzau", "text": "Amazon.com.au (Amazon Australia)"}
+        ]
+      },
+      {
+        "id": "multiamazon",
+        "type": "select",
+        "name": "Enable all amazon websites",
+        "description": "Search on a specific amazon website by using -*domain* parameter. Example: \"amz -us Xbox series x\"",
+        "default_value": "No",
+        "options": [
+          {"value": "Yes", "text": "Yes"},
+          {"value": "No", "text": "No"}
+        ]
+
+      },
+      {
+        "id": "fastsearch",
+        "type": "select",
+        "name": "Enable FastSearch with dot .",
+        "description": "Fast searching the five most rated results by placing a dot at the end of your query. Example: \"amz The book of dust.\"",
+        "default_value": "Yes",
+        "options": [
+          {"value": "Yes", "text": "Yes"},
+          {"value": "No", "text": "No"}
+        ]
+
+      },
+      {
+        "id": "fastcommands",
+        "type": "select",
+        "name": "Enable fast commands: -myprofile -myorders -mymessages -mybalance",
+        "description": "Open your amazon profile pages with simple parameters. Example: \"amz -myprofile\"",
+        "default_value": "Yes",
+        "options": [
+          {"value": "Yes", "text": "Yes"},
+          {"value": "No", "text": "No"}
+        ]
+
+      },
+      {
+        "id": "wait_seconds",
+        "type": "select",
+        "name": "Maximum seconds to wait before stopping FastSearch",
+        "description": "Set maximum seconds to wait for a response when using FastSearch. Suggested value: 5",
+        "default_value": 5,
+        "options": [
+          {"value": 1, "text": "1"},
+          {"value": 2, "text": "2"},
+          {"value": 3, "text": "3"},
+          {"value": 4, "text": "4"},
+          {"value": 5, "text": "5"},
+          {"value": 6, "text": "6"},
+          {"value": 7, "text": "7"},
+          {"value": 8, "text": "8"},
+          {"value": 9, "text": "9"},
+          {"value": 10, "text": "10"}
+        ]
+      },
+      {
+        "id": "amz",
+        "type": "keyword",
+        "name": "Default amazon keyword",
+        "default_value": "amz"
+      }
+    ]
+  }
