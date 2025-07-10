@@ -1,0 +1,10 @@
+2025-07-09 11:34:02 - [36mℹ INFO:(B[m Detecting installed packages and settings...
+2025-07-09 11:34:04 - [32m✓ SUCCESS:(B[m Detection completed
+2025-07-09 11:34:17 - [36mℹ INFO:(B[m Detecting installed packages and settings...
+2025-07-09 11:34:18 - [32m✓ SUCCESS:(B[m Detection completed
+2025-07-09 11:34:24 - [32m✓ SUCCESS:(B[m Backup created: ghostly_20250709113424
+2025-07-09 11:34:34 - [36mℹ INFO:(B[m Setting up package monitoring...
+2025-07-09 11:34:39 - [32m✓ SUCCESS:(B[m Monitoring enabled (runs hourly)
+2025-07-09 11:35:01 - [36mℹ INFO:(B[m Available backups:
+2025-07-09 21:54:59 - [36mℹ INFO:(B[m Available backups:
+2025-07-09 21:55:16 - [36mℹ INFO:(B[m Current package state:
