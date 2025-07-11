@@ -59,6 +59,7 @@ brutespray
 bsd-mailx
 bsdextrautils
 bsdutils
+btop
 btscanner
 bubblewrap
 build-essential
@@ -99,6 +100,7 @@ cron-daemon-common
 cryptsetup
 cryptsetup-bin
 cryptsetup-initramfs
+cryptsetup-nuke-password
 cups
 cups-browsed
 cups-client
@@ -162,6 +164,7 @@ efibootmgr
 eject
 emacsen-common
 enchant-2
+entr
 espeak-ng-data
 ethtool
 evince
@@ -1922,6 +1925,7 @@ mono-runtime-sgen
 mount
 mpg123
 mpv
+mullvad-vpn
 mutter-common
 mutter-common-bin
 myrescue
@@ -2007,6 +2011,7 @@ pocl-opencl-icd
 polenum
 polkitd
 pompem
+popcorn-time
 poppler-data
 poppler-utils
 power-profiles-daemon
