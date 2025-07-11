@@ -1,11 +1,13 @@
 atuin
-gcc
 gitleaks
 grc
 kanata
+kew
 lazygit
 onefetch
 starship
+tgpt
 thefuck
+uv
 yazi
 zoxide
