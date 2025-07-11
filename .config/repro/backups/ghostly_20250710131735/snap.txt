@@ -1,0 +1,8 @@
+bare
+core22
+core24
+ghostty
+gnome-42-2204
+gtk-common-themes
+snapd
+snap-store

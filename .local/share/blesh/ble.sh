@@ -1643,9 +1643,9 @@ function ble-reload {
 _ble_base_repository='/home/h4ck3r/ble.sh'
 _ble_base_branch='master'
 _ble_base_repository_url=https://github.com/akinomyoga/ble.sh
-_ble_base_build_git_version='git version 2.39.5'
-_ble_base_build_make_version='GNU Make 4.3'
-_ble_base_build_gawk_version='GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)'
+_ble_base_build_git_version='git version 2.47.2'
+_ble_base_build_make_version='GNU Make 4.4.1'
+_ble_base_build_gawk_version='GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)'
 function ble-update/.check-install-directory-ownership {
   if [[ ! -O $_ble_base ]]; then
     ble/util/print 'ble-update: install directory is owned by another user:' >&2

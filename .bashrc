@@ -129,7 +129,7 @@ alias s="kitten ssh"
 eval "$(thefuck --alias)"
 
 # Rust
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
 # Atuin
 eval "$(atuin init bash)"

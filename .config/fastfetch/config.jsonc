@@ -93,8 +93,8 @@
     },
     {
       "key": "Pkgs         ",
-      "keyColor": "blue",
-      "type": "pkgs"
+      "keyColor": "green",
+      "type": "packages"
     },
     "break",
     {

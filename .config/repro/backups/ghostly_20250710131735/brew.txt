@@ -1,0 +1,11 @@
+atuin
+gcc
+gitleaks
+grc
+kanata
+lazygit
+onefetch
+starship
+thefuck
+yazi
+zoxide
