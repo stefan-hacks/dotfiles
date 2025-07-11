@@ -46,6 +46,7 @@ doc-debian
 dosfstools
 dpkg
 e2fsprogs
+entr
 evolution
 evolution-plugins
 eza

@@ -4,5 +4,5 @@ core24
 ghostty
 gnome-42-2204
 gtk-common-themes
-snap-store
 snapd
+snap-store

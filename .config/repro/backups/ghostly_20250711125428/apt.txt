@@ -11,6 +11,7 @@ bat
 bind9-dnsutils
 bind9-host
 bsdutils
+btop
 build-essential
 busybox
 bzip2
@@ -23,7 +24,9 @@ cpio
 cpufetch
 cron
 cron-daemon-common
+cryptsetup
 cryptsetup-initramfs
+cryptsetup-nuke-password
 cups-pk-helper
 curl
 dash
@@ -214,6 +217,7 @@ ncurses-bin
 ncurses-term
 netbase
 netcat-traditional
+netdiscover
 network-manager
 nftables
 openssh-client
@@ -223,6 +227,7 @@ pciutils
 perl
 perl-base
 pkg-config
+popcorn-time
 procps
 python3-reportbug
 python3-systemd
@@ -247,6 +252,7 @@ task-gnome-desktop
 task-laptop
 tasksel
 tasksel-data
+tealdeer
 totem-plugins
 traceroute
 tzdata
@@ -260,6 +266,7 @@ util-linux
 util-linux-extra
 vim-common
 vim-tiny
+virtualbox-7.1
 vlc
 wamerican
 wget

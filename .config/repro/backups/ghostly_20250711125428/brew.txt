@@ -1,10 +1,4 @@
 atuin
-binsider
-carapace
-dust
-entr
-eza
-fzf
 gitleaks
 grc
 kanata
@@ -15,5 +9,5 @@ starship
 tgpt
 thefuck
 uv
-yt-dlp
+yazi
 zoxide
