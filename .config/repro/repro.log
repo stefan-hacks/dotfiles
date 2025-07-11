@@ -13,3 +13,7 @@
 2025-07-10 13:17:35 - [32m✓ SUCCESS:(B[m Backup created: ghostly_20250710131735
 2025-07-10 13:17:52 - [36mℹ INFO:(B[m Setting up package monitoring...
 2025-07-10 13:17:58 - [32m✓ SUCCESS:(B[m Monitoring enabled (runs hourly)
+[32m✓ Detected and saved package states.(B[m
+[32m✓ Detected and saved package states.(B[m
+2025-07-11 12:27:18 - ERROR: Specify manager: package (e.g., apt:neovim)
+2025-07-11 12:27:41 - INFO: Installing btop via apt
