@@ -389,6 +389,7 @@ gnome-system-monitor
 gnome-terminal
 gnome-terminal-data
 gnome-text-editor
+gnome-themes-extra
 gnome-themes-extra-data
 gnome-tour
 gnome-tweaks
@@ -434,6 +435,7 @@ gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
 gstreamer1.0-x
 gtk-update-icon-cache
+gtk2-engines-pixbuf
 gvfs
 gvfs-backends
 gvfs-common
@@ -859,6 +861,8 @@ libfwnt1t64
 libfwsi1t64
 libfwupd3
 libgail-3-0t64
+libgail-common
+libgail18t64
 libgav1-1
 libgbm1
 libgc1
@@ -968,6 +972,7 @@ libgtk-4-media-gstreamer
 libgtk-vnc-2.0-0
 libgtk2.0-0
 libgtk2.0-0t64
+libgtk2.0-bin
 libgtk2.0-common
 libgtk3-perl
 libgtkmm-4.0-0
@@ -1484,6 +1489,8 @@ libsasl2-modules
 libsasl2-modules-db
 libsbc1
 libscca1t64
+libsdl-ttf2.0-0
+libsdl1.2debian
 libsdl2-2.0-0
 libseccomp2
 libsecret-1-0
@@ -1836,12 +1843,16 @@ lintian
 linux-base
 linux-headers-6.12.33+deb13-amd64
 linux-headers-6.12.33+deb13-common
+linux-headers-6.12.35+deb13-amd64
+linux-headers-6.12.35+deb13-common
+linux-headers-amd64
 linux-image-6.1.0-32-amd64
 linux-image-6.1.0-37-amd64
 linux-image-6.12.33+deb13-amd64
 linux-image-6.12.35+deb13-amd64
 linux-image-amd64
 linux-kbuild-6.12.33+deb13
+linux-kbuild-6.12.35+deb13
 linux-libc-dev
 linux-sysctl-defaults
 lld-19
@@ -1932,6 +1943,7 @@ ndiff
 net-tools
 netbase
 netcat-traditional
+netdiscover
 netpbm
 network-manager
 network-manager-applet
@@ -2381,6 +2393,7 @@ tasksel
 tasksel-data
 tcpdump
 tcpick
+tealdeer
 tecla
 testssl.sh
 time-decode
@@ -2425,6 +2438,7 @@ vdpau-driver-all
 vim-common
 vim-tiny
 vinetto
+virtualbox-7.1
 vlc
 vlc-bin
 vlc-data
