@@ -1,8 +1,0 @@
-{
-    "lock": {
-        "command": "swaylock"
-    },
-    "log-out": {
-        "command": "swaymsg exit"
-    }
-}
