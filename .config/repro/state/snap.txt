@@ -1,8 +1,8 @@
 bare
+core
 core22
-core24
-ghostty
 gnome-42-2204
 gtk-common-themes
+hello-world
 snapd
 snap-store

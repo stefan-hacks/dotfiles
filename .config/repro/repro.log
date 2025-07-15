@@ -36,3 +36,5 @@
 2025-07-11 13:13:39 - [36mℹ INFO:(B[m Available backups:
 2025-07-11 13:13:58 - [31m✗ ERROR:(B[m Unknown option: diff
 2025-07-11 15:57:56 - [36mℹ INFO:(B[m Available backups:
+2025-07-15 16:38:14 - INFO: Detecting installed packages and settings...
+2025-07-15 16:38:17 - SUCCESS: Detection completed

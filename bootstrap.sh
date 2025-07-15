@@ -228,7 +228,7 @@ git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git "$HOME/Downl
 # Section: GRUB Custom Theme Installation
 log "Installing Grub theme..."
 git clone https://github.com/vinceliuice/grub2-themes.git "$HOME/gitprojects/grub2-themes"
-cp "$HOME/Pictures/wallpapers/wallpaper_001.jpg" "$HOME/gitprojects/grub2-themes/background.jpg"
+cp "$HOME/Pictures/wallpapers/wallpaper_023.jpg" "$HOME/gitprojects/grub2-themes/background.jpg"
 sudo "$HOME/gitprojects/grub2-themes/install.sh" -s 1080p -b -t whitesur
 
 # Section: GRUB Configuration

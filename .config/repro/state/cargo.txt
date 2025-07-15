@@ -1,3 +1,0 @@
-binsider
-cargo-bin
-cargo-list

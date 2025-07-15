@@ -1,13 +1,11 @@
 atuin
-gitleaks
+binsider
+eza
 grc
+helix
 kanata
 kew
-lazygit
-onefetch
 starship
 tgpt
 thefuck
-uv
-yazi
 zoxide

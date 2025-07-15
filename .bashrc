@@ -74,7 +74,7 @@ fi
 #set -o vi
 
 # Terminal
-# export TERM=xterm-256color
+export TERM=xterm-256color
 
 
 # colorize output
@@ -85,7 +85,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-up 
 gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-down "['<Ctrl><Super>Down']"
 
 #path
-export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/h4ck3r/.local/bin:/home/h4ck3r/.cargo/bin:/snap/bin:$PATH
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/stefan-hacks/.local/bin:/home/stefan-hacks/.cargo/bin:/snap/bin
 
 
 # preferred text editor
