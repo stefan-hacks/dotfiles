@@ -116,7 +116,7 @@ sudo apt purge -y audacity gimp gnome-games libreoffice*
 log "Setting up gitprojects and dotfiles..."
 mkdir -p "$HOME/gitprojects"
 rm -rf "$HOME/.bashrc"
-git clone https://github.com/d4rkb4sh8/dotfiles_kali.git "$HOME/dotfiles"
+git clone https://github.com/stefan-hacks/dotfiles.git "$HOME/dotfiles"
 cd "$HOME/dotfiles" && stow --adopt . && git restore .
 
 # Remove specified packages from apt_list.bak
