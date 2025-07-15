@@ -1,6 +1,7 @@
 aom
 atuin
 berkeley-db@5
+binsider
 binutils
 brotli
 bzip2
@@ -10,6 +11,7 @@ chafa
 curl
 dbus
 expat
+eza
 faad2
 fftw
 fontconfig
@@ -24,6 +26,7 @@ gmp
 graphite2
 grc
 harfbuzz
+helix
 highway
 hwloc
 icu4c@77
@@ -40,6 +43,7 @@ libdeflate
 libedit
 libevent
 libffi
+libgit2
 libidn2
 libmpc
 libnghttp2
@@ -86,10 +90,10 @@ starship
 taglib
 tgpt
 thefuck
+toipe
 unzip
 utf8cpp
 util-linux
-uv
 webp
 xorgproto
 xz

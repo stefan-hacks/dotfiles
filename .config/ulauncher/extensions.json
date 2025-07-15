@@ -114,49 +114,49 @@
     "com.github.sebw.ulauncher-tplink-home-manager": {
         "id": "com.github.sebw.ulauncher-tplink-home-manager",
         "url": "https://github.com/sebw/ulauncher-tplink-home-manager/",
-        "updated_at": "2025-07-10T13:13:00.853033",
+        "updated_at": "2025-07-15T16:43:19.674845",
         "last_commit": "c613196294c9db9216ab2eef394f32c784b38149",
         "last_commit_time": "2019-12-14T15:41:03"
     },
     "com.github.nastuzzisamy.ulauncher-youtube-search": {
         "id": "com.github.nastuzzisamy.ulauncher-youtube-search",
         "url": "https://github.com/NastuzziSamy/ulauncher-youtube-search",
-        "updated_at": "2025-07-10T13:13:02.653246",
+        "updated_at": "2025-07-15T16:43:29.228164",
         "last_commit": "fe855811358b2f15ec6ed69ca18e20639874fa28",
         "last_commit_time": "2021-03-27T11:29:18"
     },
     "com.github.doekeb.ulauncher-gnome-calculator": {
         "id": "com.github.doekeb.ulauncher-gnome-calculator",
         "url": "https://github.com/Doekeb/ulauncher-gnome-calculator",
-        "updated_at": "2025-07-10T13:13:03.973492",
+        "updated_at": "2025-07-15T16:43:39.467182",
         "last_commit": "f1efd61c6ecd1160b007bca1f90511a346378e64",
         "last_commit_time": "2021-05-03T15:30:01"
     },
     "com.github.fajtak.ulauncher-weather": {
         "id": "com.github.fajtak.ulauncher-weather",
         "url": "https://github.com/fajtak/ulauncher-weather",
-        "updated_at": "2025-07-10T13:13:05.698953",
+        "updated_at": "2025-07-15T16:43:48.379821",
         "last_commit": "996da704e505776753f6340755d20f03075c2be8",
         "last_commit_time": "2022-04-05T18:23:30"
     },
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2025-07-10T13:13:07.685487",
+        "updated_at": "2025-07-15T16:44:15.226838",
         "last_commit": "7dedd992709fa2297735cddf852404144d4da47c",
         "last_commit_time": "2023-11-14T16:53:20"
     },
     "com.github.dankni95.ulauncher-playerctl": {
         "id": "com.github.dankni95.ulauncher-playerctl",
         "url": "https://github.com/Dankni95/ulauncher-playerctl",
-        "updated_at": "2025-07-10T13:13:09.466785",
+        "updated_at": "2025-07-15T16:44:26.193265",
         "last_commit": "c2efafd66c3d60445a545f9f202b82202f93cd70",
         "last_commit_time": "2022-03-23T21:18:25"
     },
     "com.github.ultiblog.ulauncher-password-generator": {
         "id": "com.github.ultiblog.ulauncher-password-generator",
         "url": "https://github.com/Ultiblog/ULauncher-Password-Generator",
-        "updated_at": "2025-07-10T13:13:11.101341",
+        "updated_at": "2025-07-15T16:44:34.582550",
         "last_commit": "de08e6b3ce1c58e4f2b23321702ba40fa2110f73",
         "last_commit_time": "2022-11-11T12:05:05"
     }
