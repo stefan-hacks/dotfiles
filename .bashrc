@@ -84,6 +84,9 @@ export GRC_ALIASES=true
 gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-up "['<Ctrl><Super>Up']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-down "['<Ctrl><Super>Down']"
 
+# gnome auto-focus
+# gsettings set org.gnome.desktop.wm.preferences auto-raise "true"
+
 #path
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/stefan-hacks/.local/bin:/home/stefan-hacks/.cargo/bin:/snap/bin
 
