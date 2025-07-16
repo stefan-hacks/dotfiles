@@ -1944,6 +1944,7 @@ mono-gac
 mono-runtime
 mono-runtime-common
 mono-runtime-sgen
+most
 mount
 mpg123
 mpv
@@ -1968,6 +1969,7 @@ ndiff
 net-tools
 netbase
 netcat-traditional
+netdiscover
 network-manager
 network-manager-applet
 network-manager-gnome
