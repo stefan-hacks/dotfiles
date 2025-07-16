@@ -27,6 +27,7 @@ aspell-en
 assetfinder
 at-spi2-common
 at-spi2-core
+atop
 avahi-autoipd
 avahi-daemon
 baobab
@@ -47,6 +48,7 @@ blt
 bluetooth
 bluez
 bluez-obexd
+bmon
 bogofilter
 bogofilter-bdb
 bogofilter-common
@@ -59,11 +61,13 @@ bruteforce-wallet
 brutespray
 bsdextrautils
 bsdutils
+btop
 btscanner
 bubblewrap
 build-essential
 bully
 busybox
+byobu
 bzip2
 ca-certificates
 ca-certificates-java
@@ -71,6 +75,7 @@ ca-certificates-mono
 capstone-tool
 cargo
 ccrypt
+ccze
 cdrdao
 cewl
 chaosreader
@@ -85,6 +90,7 @@ clang-tools-19
 cli-common
 cmake
 cmake-data
+cmatrix
 colord
 colord-data
 console-setup
@@ -305,6 +311,7 @@ gir1.2-gstreamer-1.0
 gir1.2-gtk-3.0
 gir1.2-gtk-4.0
 gir1.2-gtksource-4
+gir1.2-gtop-2.0
 gir1.2-gudev-1.0
 gir1.2-gweather-4.0
 gir1.2-handy-1
@@ -423,7 +430,6 @@ gpgsm
 gpgv
 gpshell
 graphicsmagick
-graphicsmagick-imagemagick-compat
 graudit
 grep
 grilo-plugins-0.3
@@ -472,7 +478,9 @@ hcxtools
 heif-gdk-pixbuf
 heif-thumbnailer
 hicolor-icon-theme
+hollywood
 hostname
+htop
 hunspell-en-us
 hwloc
 hydra
@@ -490,8 +498,10 @@ ifupdown
 iio-sensor-proxy
 ike-scan
 im-config
+imagemagick
 imagemagick-6-common
 imagemagick-7-common
+imagemagick-7.q16
 inetutils-telnet
 init
 init-system-helpers
@@ -519,6 +529,7 @@ java-common
 javascript-common
 john
 john-data
+jp2a
 jq
 kbd
 keyboard-configuration
@@ -717,6 +728,8 @@ libcom-err2
 libcompress-raw-lzma-perl
 libconfig++11
 libconfig-tiny-perl
+libconfuse-common
+libconfuse2
 libconst-fast-perl
 libcpanel-json-xs-perl
 libcpuinfo0
@@ -818,6 +831,7 @@ libespeak-ng1
 libevdev2
 libevdocument3-4t64
 libevent-2.1-7t64
+libevent-core-2.1-7t64
 libevolution
 libevview3-3t64
 libewf2
@@ -958,7 +972,6 @@ libgpod4t64
 libgppcscconnectionplugin1
 libgprofng0
 libgraphene-1.0-0
-libgraphicsmagick-q16-3t64
 libgraphite2-3
 libgrilo-0.3-0
 libgs-common
@@ -1069,11 +1082,13 @@ libinstpatch-1.0-2
 libio-compress-brotli-perl
 libio-html-perl
 libio-interactive-perl
+libio-pty-perl
 libio-socket-ssl-perl
 libio-string-perl
 libio-stringy-perl
 libip4tc2
 libip6tc2
+libipc-run-perl
 libipc-run3-perl
 libipc-system-simple-perl
 libiptcdata0
@@ -1169,6 +1184,7 @@ liblwp-mediatypes-perl
 liblwp-protocol-https-perl
 liblz1
 liblz4-1
+liblzf1
 liblzma5
 liblzo2-2
 libmad0
@@ -1286,6 +1302,7 @@ libnet-ssleay-perl
 libnet1
 libnetaddr-ip-perl
 libnetfilter-conntrack3
+libnetpbm11t64
 libnettle8t64
 libnewt0.52
 libnfc6
@@ -1455,6 +1472,7 @@ libqt5x11extras5
 libqt6core6t64
 libqt6dbus6
 libqt6gui6
+libqt6help6
 libqt6network6
 libqt6opengl6
 libqt6openglwidgets6
@@ -1466,6 +1484,7 @@ libqt6qmlworkerscript6
 libqt6quick6
 libqt6sql6
 libqt6sql6-sqlite
+libqt6statemachine6
 libqt6svg6
 libqt6test6
 libqt6waylandclient6
@@ -1645,9 +1664,11 @@ libtirpc-common
 libtirpc3t64
 libtk8.6
 libtommath1
+libtorrent-rasterbar2.0t64
 libtotem-plparser-common
 libtotem-plparser18
 libtotem0
+libtpms0
 libtry-tiny-perl
 libts0t64
 libtsan2
@@ -1887,6 +1908,7 @@ llvm-19-linker-tools
 llvm-19-runtime
 llvm-19-tools
 llvm-spirv-18
+lm-sensors
 locales
 locales-all
 locate
@@ -1944,6 +1966,7 @@ mono-gac
 mono-runtime
 mono-runtime-common
 mono-runtime-sgen
+moreutils
 most
 mount
 mpg123
@@ -1970,6 +1993,7 @@ net-tools
 netbase
 netcat-traditional
 netdiscover
+netpbm
 network-manager
 network-manager-applet
 network-manager-gnome
@@ -2004,6 +2028,7 @@ paramspider
 parted
 pasco
 passwd
+pastebinit
 patator
 patch
 patchutils
@@ -2037,6 +2062,7 @@ polenum
 policykit-1
 polkitd
 pompem
+popcorn-time
 poppler-data
 poppler-utils
 power-profiles-daemon
@@ -2152,6 +2178,7 @@ python3-mutagen
 python3-mysqldb
 python3-nacl
 python3-netaddr
+python3-newt
 python3-numba
 python3-numexpr
 python3-numpy
@@ -2238,6 +2265,7 @@ python3-uc-micro
 python3-ufolib2
 python3-unicodedata2
 python3-urllib3
+python3-urwid
 python3-wadllib
 python3-wcwidth
 python3-webencodings
@@ -2255,6 +2283,7 @@ python3.13
 python3.13-dev
 python3.13-minimal
 python3.13-tk
+qbittorrent
 qt6-gtk-platformtheme
 qt6-qpa-plugins
 qt6-svg-plugins
@@ -2348,6 +2377,7 @@ sound-theme-freedesktop
 speech-dispatcher
 speech-dispatcher-audio-plugins
 speech-dispatcher-espeak-ng
+speedometer
 speedtest-cli
 sphinx-rtd-theme-common
 sploitscan
@@ -2394,6 +2424,7 @@ timgm6mb-soundfont
 tinysparql
 tk8.6
 tk8.6-blt2.5
+tmux
 totem
 totem-common
 totem-plugins
@@ -2434,6 +2465,7 @@ vdpau-driver-all
 vim-common
 vim-tiny
 vinetto
+virtualbox-7.1
 vlc
 vlc-bin
 vlc-data
