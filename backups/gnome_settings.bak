@@ -132,7 +132,7 @@ panel-id='world'
 size=(948, 1035)
 
 [org/gnome/control-center]
-last-panel='background'
+last-panel='system'
 window-state=(1717, 939, true)
 
 [org/gnome/desktop/a11y]
