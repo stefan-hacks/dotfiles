@@ -132,7 +132,7 @@ panel-id='world'
 size=(948, 1035)
 
 [org/gnome/control-center]
-last-panel='system'
+last-panel='background'
 window-state=(1717, 939, true)
 
 [org/gnome/desktop/a11y]
@@ -194,7 +194,7 @@ sources=[('xkb', 'gb'), ('xkb', 'us')]
 xkb-options=@as []
 
 [org/gnome/desktop/interface]
-accent-color='blue'
+accent-color='purple'
 clock-format='12h'
 clock-show-weekday=true
 color-scheme='prefer-dark'
