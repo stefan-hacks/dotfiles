@@ -4,16 +4,12 @@ PROMPT_COMMAND='PS1_CMD1=$(ip route get 1.1.1.1 | awk -F"src " '"'"'NR == 1{ spl
 
 # colorize output
 GRC_ALIASES=true
-[[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
 
 #path
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin/:/usr/games/"
 
 # preferred text editor
-#EDITOR=nano
-
-#homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+EDITOR=hx
 
 #ble.sh
 source ~/.local/share/blesh/ble.sh
@@ -33,4 +29,5 @@ eval "$(atuin init bash)"
 
 # greet me
 echo "w3lc0m3 t0 th3 r00t 0f 4ll th1ng5! - m4ast3r y0ur cr4ft" | lolcat
+
 ```
