@@ -37,6 +37,7 @@ aspell
 aspell-en
 aspnetcore-runtime-6.0
 aspnetcore-targeting-pack-6.0
+assetfinder
 at-spi2-common
 at-spi2-core
 atftpd
@@ -3065,6 +3066,7 @@ python3-zipp
 python3-zlib-wrapper
 python3-zmq
 python3-zombie-imp
+python3-zombie-telnetlib
 python3-zope.deprecation
 python3-zope.event
 python3-zope.interface
@@ -3120,8 +3122,10 @@ reportbug
 responder
 rfdump
 rfkill
+ripgrep
 rizin-cutter
 rkhunter
+routersploit
 rpcbind
 rpcsvc-proto
 rpm
@@ -3304,6 +3308,8 @@ stegosuite
 stegsnow
 stow
 stunnel4
+subfinder
+sublist3r
 subversion
 sudo
 swaks
