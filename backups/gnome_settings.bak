@@ -132,7 +132,7 @@ panel-id='world'
 size=(948, 1035)
 
 [org/gnome/control-center]
-last-panel='online-accounts'
+last-panel='background'
 window-state=(1717, 939, true)
 
 [org/gnome/desktop/a11y]
@@ -646,7 +646,7 @@ app-picker-layout=[{'org.gnome.Calculator.desktop': <{'position': <0>}>, 'kali-a
 disable-user-extensions=false
 disabled-extensions=['readingstrip@lupantano.gihthub', 'ding@rastersoft.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@leleat-on-github', 'mediacontrols@cliffniff.github.com', 'dash-to-panel@jderose9.github.com', 'tilingshell@ferrarodomenico.com', 'eye-extended@als.kz', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'openbar@neuromorph']
 enabled-extensions=['ProxySwitcher@flannaghan.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'AlphabeticalAppGrid@stuarthayhurst', 'appindicatorsupport@rgcjonas.gmail.com', 'clipboard-indicator@tudmotu.com', 'cronomix@zagortenay333', 'quake-mode@repsac-by.github.com', 'notification-position@drugo.dev', 'notification-timeout@chlumskyvaclav.gmail.com', 'quick-settings-tweaks@qwreey', 'dash-to-dock@micxgx.gmail.com', 'arcmenu@arcmenu.com', 'BingWallpaper@ineffable-gmail.com', 'forge@jmmaranan.com', 'Vitals@CoreCoding.com', 'rounded-window-corners@fxgn', 'quick-settings-audio-panel@rayzeq.github.io', 'GPaste@gnome-shell-extensions.gnome.org', 'just-perfection-desktop@just-perfection', 'quake-terminal@diegodario88.github.io', 'notification-configurator@exposedcat', 'blur-my-shell@aunetx', 'steal-my-focus-window@steal-my-focus-window', 'add-username-toppanel@brendaw.com']
-favorite-apps=['mullvad-vpn.desktop', 'ghostty_ghostty.desktop', 'kitty.desktop', 'virtualbox.desktop', 'org.gnome.Nautilus.desktop', 'firefox-esr.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.Evolution.desktop', 'org.onlyoffice.desktopeditors.desktop', 'com.discordapp.Discord.desktop', 'whatsie_whatsie.desktop', 'org.gnome.Shotwell.desktop', 'Popcorn-Time.desktop', 'org.gnome.Software.desktop', 'snap-store_snap-store.desktop', 'io.gitlab.adhami3310.Impression.desktop', 'org.gnome.World.PikaBackup.desktop']
+favorite-apps=['mullvad-vpn.desktop', 'kitty.desktop', 'ghostty_ghostty.desktop', 'virtualbox.desktop', 'org.gnome.Nautilus.desktop', 'firefox-esr.desktop', 'net.cozic.joplin_desktop.desktop', 'org.gnome.Evolution.desktop', 'org.onlyoffice.desktopeditors.desktop', 'com.discordapp.Discord.desktop', 'org.gnome.Shotwell.desktop', 'Popcorn-Time.desktop', 'org.gnome.Software.desktop', 'snap-store_snap-store.desktop', 'io.gitlab.adhami3310.Impression.desktop', 'org.gnome.World.PikaBackup.desktop']
 last-selected-power-profile='power-saver'
 remember-mount-password=true
 welcome-dialog-last-shown-version='46.3.1'
