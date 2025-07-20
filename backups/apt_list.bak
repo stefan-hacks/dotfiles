@@ -27,9 +27,11 @@ appstream
 apt
 apt-config-icons
 apt-file
+apt-listbugs
 apt-listchanges
 apt-utils
 arj
+armitage
 arp-scan
 arping
 asleap
@@ -107,6 +109,7 @@ cewl
 cgpt
 cherrytree
 chirp
+chkrootkit
 chntpw
 chromium
 chromium-common
@@ -186,6 +189,7 @@ diffutils
 dirb
 dirbuster
 dirmngr
+distro-info
 distro-info-data
 dkms
 dmeventd
@@ -2414,6 +2418,8 @@ offsec-awae-python2
 ohrwurm
 ollydbg
 onesixtyone
+openjdk-11-jre
+openjdk-11-jre-headless
 openjdk-21-jre
 openjdk-21-jre-headless
 openocd
@@ -3150,6 +3156,7 @@ ruby-cms-scanner
 ruby-concurrent
 ruby-connection-pool
 ruby-csv
+ruby-debian
 ruby-dev
 ruby-did-you-mean
 ruby-domain-name
@@ -3157,6 +3164,7 @@ ruby-erubi
 ruby-ethon
 ruby-ffi
 ruby-get-process-mem
+ruby-gettext
 ruby-gssapi
 ruby-gyoku
 ruby-http-cookie
@@ -3166,6 +3174,7 @@ ruby-ipaddress
 ruby-json
 ruby-levenshtein
 ruby-little-plugger
+ruby-locale
 ruby-logging
 ruby-mime
 ruby-mime-types
@@ -3191,15 +3200,20 @@ ruby-ruby2-keywords
 ruby-rubygems
 ruby-sdbm
 ruby-snmp
+ruby-soap4r
 ruby-spider
 ruby-sqlite3
+ruby-sys-proctable
+ruby-text
 ruby-typhoeus
 ruby-tzinfo
 ruby-unf
 ruby-unf-ext
+ruby-unicode
 ruby-webrick
 ruby-winrm
 ruby-winrm-fs
+ruby-xmlparser
 ruby-xmlrpc
 ruby-yajl
 ruby-zip
