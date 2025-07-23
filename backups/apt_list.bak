@@ -72,7 +72,6 @@ bzip2
 ca-certificates
 ca-certificates-mono
 capstone-tool
-cargo
 ccrypt
 ccze
 cewl
@@ -144,6 +143,7 @@ debian-faq
 debianutils
 desktop-base
 desktop-file-utils
+dict
 dictionaries-common
 diffstat
 diffutils
@@ -473,6 +473,7 @@ hicolor-icon-theme
 hollywood
 hostname
 htop
+httrack
 hunspell-en-us
 hw-probe
 hwinfo
@@ -1049,6 +1050,7 @@ libhttp-date-perl
 libhttp-message-perl
 libhttp-negotiate-perl
 libhttp-parser2.9
+libhttrack2
 libhunspell-1.7-0
 libhwasan0
 libhwloc-plugins
@@ -1183,6 +1185,7 @@ liblz1
 liblz4-1
 liblzma5
 liblzo2-2
+libmaa4
 libmad0
 libmagic-mgc
 libmagic1
@@ -1493,6 +1496,7 @@ libraw1394-11
 libraw23t64
 libre2-11
 libreadline8t64
+librecode3
 libregexp-ipv6-perl
 libregexp-wildcards-perl
 libregf1t64
@@ -1600,8 +1604,6 @@ libssh2-1t64
 libssl-dev
 libssl3t64
 libstartup-notification0
-libstd-rust-1.85
-libstd-rust-dev
 libstdc++-14-dev
 libstdc++6
 libstemmer0d
@@ -1697,6 +1699,7 @@ libupnp17t64
 libupower-glib3
 liburcu8t64
 liburi-perl
+liburing2
 liburiparser1
 libusb-0.1-4
 libusb-1.0-0
@@ -1889,7 +1892,6 @@ linux-kbuild-6.1
 linux-kbuild-6.12.35+deb13
 linux-libc-dev
 linux-sysctl-defaults
-lld-19
 llvm-18
 llvm-18-dev
 llvm-18-linker-tools
@@ -2047,6 +2049,7 @@ pkg-config
 pkgconf
 pkgconf-bin
 plaso
+plocate
 plymouth
 plymouth-label
 plzip
@@ -2340,6 +2343,7 @@ readline-common
 readpe
 realmd
 reaver
+recode
 recoverdm
 recoverjpeg
 reglookup
@@ -2380,8 +2384,6 @@ ruby-zip
 ruby3.3
 rubygems-integration
 runit-helper
-rust-llvm
-rustc
 rygel
 rygel-playbin
 rygel-tracker
