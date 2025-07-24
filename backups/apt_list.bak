@@ -36,6 +36,7 @@ base-files
 base-passwd
 bash
 bash-completion
+bat
 bc
 bind9-dnsutils
 bind9-host
@@ -206,6 +207,7 @@ fakeroot
 fastfetch
 fatcat
 fcrackzip
+fd-find
 fdisk
 ffmpeg
 figlet
@@ -1878,9 +1880,6 @@ libzvbi0t64
 libzxing3
 lintian
 linux-base
-linux-compiler-gcc-12-x86
-linux-headers-6.1.0-37-amd64
-linux-headers-6.1.0-37-common
 linux-headers-6.12.35+deb13-amd64
 linux-headers-6.12.35+deb13-common
 linux-headers-amd64
@@ -1888,7 +1887,6 @@ linux-image-6.1.0-32-amd64
 linux-image-6.1.0-37-amd64
 linux-image-6.12.35+deb13-amd64
 linux-image-amd64
-linux-kbuild-6.1
 linux-kbuild-6.12.35+deb13
 linux-libc-dev
 linux-sysctl-defaults
@@ -1916,6 +1914,7 @@ loupe
 low-memory-monitor
 lsb-release
 lsof
+lsscsi
 luit
 lvm2
 lynis
@@ -2591,6 +2590,7 @@ xserver-xorg-video-radeon
 xserver-xorg-video-vesa
 xserver-xorg-video-vmware
 xwayland
+xxd
 xz-utils
 yara
 yelp
