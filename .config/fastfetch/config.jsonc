@@ -3,8 +3,8 @@
   "logo": {
     "type": "kitty-direct",
     "source": "$HOME/dotfiles/.config/fastfetch/pngs/wallpaper_005.png",
-    "height": 18,
-    "width": 42
+    "height": 13,
+    "width": 32
   },
   "display": {
     "separator": "->   ",
@@ -16,7 +16,7 @@
     ],
     "key": {
       "type": "both",
-      "paddingLeft": 4
+      "paddingLeft": 1
     }
   },
   "modules": [
