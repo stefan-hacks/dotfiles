@@ -93,6 +93,7 @@ alias showBlocked='sudo ipfw list'           # showBlocked:  All ipfw rules inc/
 alias ipInfo0='ifconfig getpacket en0'       # ipInfo0:      Get info on connections for en0
 alias ipInfo1='ifconfig getpacket wlan0'     # ipInfo1:      Get info on connections for wlan0
 alias myip='curl ip-api.com'
+alias pserv='python -m http.server 8000'
 
 #   ---------------------------------------
 #  8.  SYSTEMS OPERATIONS & INFORMATION
