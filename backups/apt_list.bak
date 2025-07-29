@@ -140,6 +140,7 @@ dconf-service
 dcraw
 debconf
 debconf-i18n
+debconf-utils
 debian-archive-keyring
 debian-faq
 debianutils
@@ -2333,6 +2334,7 @@ psmisc
 ptunnel
 publicsuffix
 pv
+pwgen
 pwnat
 pyqt5-dev-tools
 pyqt6-dev-tools
@@ -3030,6 +3032,7 @@ sparta-scripts
 speech-dispatcher
 speech-dispatcher-audio-plugins
 speech-dispatcher-espeak-ng
+speedtest-cli
 sphinx-rtd-theme-common
 spiderfoot
 spike
