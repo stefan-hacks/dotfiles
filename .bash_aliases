@@ -100,7 +100,7 @@ alias myip='curl ip-api.com'
 
 alias mountReadWrite='mount -uw /' # mountReadWrite:   For use when booted into single-user
 alias showpath='echo $PATH | sed "s/:/\n/g" | sort'
-
+alias bittype="grep -qP '^flags\s*:.*\blm\b' /proc/cpuinfo && echo 64-bit || echo 32-bit"
 #   ---------------------------------------
 #  9.  DATE & TIME MANAGEMENT
 #   ---------------------------------------

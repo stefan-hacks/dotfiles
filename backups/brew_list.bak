@@ -84,6 +84,7 @@ opusfile
 pango
 pcre2
 pixman
+pkgconf
 pmix
 python@3.13
 readline

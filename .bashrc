@@ -88,7 +88,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-dow
 # gsettings set org.gnome.desktop.wm.preferences auto-raise "true"
 
 #path
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/stefan-hacks/.local/bin:/home/stefan-hacks/.cargo/bin:/snap/bin
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/stefan-hacks/.local/bin:/home/stefan-hacks/.cargo/bin:/snap/bin:/home/stefan-hacks/platform-tools
 
 
 # preferred text editor
@@ -124,6 +124,8 @@ echo "w3lc0m3 h4ck3r - let the games begin! - m4ast3r y0ur cr4ft" | lolcat
 
 # # Disable command editing
 # set +o vi-command
+
+
 
 # Kitty ssh config alias
 alias s="kitten ssh"
