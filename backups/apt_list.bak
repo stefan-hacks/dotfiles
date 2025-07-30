@@ -27,6 +27,7 @@ arj
 armitage
 arp-scan
 arping
+asciinema
 aspell
 aspell-en
 aspnetcore-runtime-6.0
@@ -2190,6 +2191,7 @@ ncurses-hexedit
 ncurses-term
 ndiff
 net-tools
+net.downloadhelper.coapp
 netbase
 netcat-traditional
 netdiscover

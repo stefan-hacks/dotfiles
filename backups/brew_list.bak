@@ -44,6 +44,7 @@ libdeflate
 libedit
 libevent
 libffi
+libgit2
 libidn2
 libmpc
 libnghttp2
@@ -74,6 +75,7 @@ lzo
 mpdecimal
 mpfr
 ncurses
+nushell
 onefetch
 open-mpi
 openexr
