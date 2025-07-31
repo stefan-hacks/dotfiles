@@ -102,7 +102,11 @@ source ~/.local/share/blesh/ble.sh
 
 # Colorful manpages
 # Add to your shell config (e.g., ~/.bashrc, ~/.zshrc)
-export MANPAGER="less -R --use-color -Dd+r -Du+b"
+# export MANPAGER="less -R --use-color -Dd+r -Du+b"
+
+# [ "$TERM" = "xterm-kitty" ] && export MANPAGER="kitty +kitten man"
+    
+export MANPAGER="most"
 
 # greet me
 echo "w3lc0m3 h4ck3r - let the games begin! - m4ast3r y0ur cr4ft" | lolcat

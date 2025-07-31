@@ -8,15 +8,15 @@ cursor_trail_decay 0.1 0.4
 # Thin active border using GNOME color
 window_border_width 1pt
 draw_minimal_borders yes
-# active_border_color #77767B  
-# inactive_border_color #282828
+active_border_color #77767B  
+inactive_border_color #282828
 
 # Tab bar integration
-# tab_bar_background #1d1d1d
-# active_tab_foreground #ffffff
-# active_tab_background #77767B
-# inactive_tab_foreground #b0afac
-# inactive_tab_background #303030
+tab_bar_background #1d1d1d
+active_tab_foreground #ffffff
+active_tab_background #77767B
+inactive_tab_foreground #b0afac
+inactive_tab_background #303030
 
 # Quake Terminal sizing
 remember_window_size no
@@ -29,6 +29,7 @@ hide_window_decorations yes
 
 # Theme & Colors
 include current-theme.conf 
+include colors.conf        
 
 # Fonts
 font_family      Hack Nerd Font
@@ -106,8 +107,6 @@ map alt+j neighboring_window down
 
 # Reload config
 map ctrl+shift+r   load_config_file
-
-
 
 
 

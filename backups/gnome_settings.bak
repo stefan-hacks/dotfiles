@@ -627,6 +627,12 @@ last-folder-path='/home/h4ck3r/Documents'
 [org/gnome/portal/filechooser/ulauncher]
 last-folder-path='/home/h4ck3r/dotfiles'
 
+[org/gnome/settings-daemon/global-shortcuts]
+applications=['com.github.finefindus.eyedropper']
+
+[org/gnome/settings-daemon/global-shortcuts/com.github.finefindus.eyedropper]
+shortcuts=[('EyedropperColorPick', {'shortcuts': <['<Control><Alt>e']>, 'description': <'Pick a New Color'>})]
+
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
 night-light-schedule-automatic=false
