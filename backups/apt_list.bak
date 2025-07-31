@@ -440,6 +440,14 @@ gnupg-l10n
 gnupg-utils
 gnutls-bin
 gobuster
+golang
+golang-1.24
+golang-1.24-doc
+golang-1.24-go
+golang-1.24-src
+golang-doc
+golang-go
+golang-src
 gophish
 gparted
 gparted-common
@@ -3147,6 +3155,7 @@ user-session-migration
 util-linux
 util-linux-extra
 uuid-dev
+uuid-runtime
 va-driver-all
 vainfo
 vboot-kernel-utils

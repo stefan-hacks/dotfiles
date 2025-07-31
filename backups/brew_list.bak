@@ -9,6 +9,7 @@ ca-certificates
 cairo
 carapace
 chafa
+circumflex
 curl
 dbus
 dust
@@ -23,6 +24,7 @@ gdk-pixbuf
 giflib
 gitleaks
 glib
+glow
 gmp
 gperf
 graphite2
@@ -40,6 +42,7 @@ kanata
 kew
 krb5
 lazygit
+less
 libavif
 libdeflate
 libedit
