@@ -156,7 +156,7 @@ alias ux='chmod u+x'                   # ---x------ (user: --x, group: -, other:
 # 12.  GENERAL_TOOLS
 #-----------------------------------------------------------------------
 # update
-alias update='sudo nala update && sudo nala full-upgrade -y && brew update && brew upgrade && flatpak upgrade && snap refresh && sudo update-grub && sudo update-initramfs -u -k all && sudo updatedb -v;figlet "machine is updated !"|lolcat'
+alias update='sudo nala update && sudo nala full-upgrade -y && brew update && brew upgrade && flatpak upgrade && snap refresh && ble-update && tldr --update && sudo update-grub && sudo update-initramfs -u -k all && sudo updatedb -v;figlet "machine is updated !"|lolcat'
 alias kup='curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin'
 
 #clean
