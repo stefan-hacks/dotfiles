@@ -1,5 +1,5 @@
 % Color settings
-color normal lightgray black
+color normal neongreen black
 color status yellow blue
-color underline yellow black
-color overstrike brightblue black
+color underline red black
+color overstrike orange black
