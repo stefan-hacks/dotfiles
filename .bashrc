@@ -102,9 +102,10 @@ source ~/.local/share/blesh/ble.sh
 
 # Colorful manpages
 # Add to your shell config (e.g., ~/.bashrc, ~/.zshrc)
-export GROFF_NO_SGR=1
-
 eval "$(batman --export-env)"
+
+#bat theme
+export BAT_THEME="Coldark-Dark"
 
 # greet me
 echo "w3lc0m3 h4ck3r - let the games begin! - m4ast3r y0ur cr4ft" | lolcat
@@ -126,9 +127,6 @@ echo "w3lc0m3 h4ck3r - let the games begin! - m4ast3r y0ur cr4ft" | lolcat
 
 # # Disable command editing
 # set +o vi-command
-
-#bat theme
-export BAT_THEME="Coldark-Dark"
 
 # Kitty ssh config alias
 alias s="kitten ssh"
