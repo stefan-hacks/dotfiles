@@ -127,7 +127,8 @@ echo "w3lc0m3 h4ck3r - let the games begin! - m4ast3r y0ur cr4ft" | lolcat
 # # Disable command editing
 # set +o vi-command
 
-
+#bat theme
+export BAT_THEME="Coldark-Dark"
 
 # Kitty ssh config alias
 alias s="kitten ssh"
