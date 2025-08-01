@@ -48,7 +48,6 @@ base-passwd
 base58
 bash
 bash-completion
-bat
 bind9-dnsutils
 bind9-host
 bind9-libs
@@ -2272,6 +2271,7 @@ pahole
 pango1.0-tools
 papers
 papers-common
+parallel
 parted
 passing-the-hash
 passwd
@@ -3186,6 +3186,7 @@ voiphopper
 vpnc
 vpnc-scripts
 vulkan-tools
+w3m
 wafw00f
 wamerican
 wapiti
@@ -3200,6 +3201,7 @@ whatweb
 whiptail
 whois
 wifite
+wikiman
 winbind
 windows-binaries
 wireless-regdb
