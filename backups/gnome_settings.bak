@@ -1457,7 +1457,7 @@ selected-color=(true, 0.5607843137254902, 0.94117647058823528, 0.643137254901960
 clock-format='12h'
 date-format='regular'
 location-mode='path-bar'
-show-hidden=true
+show-hidden=false
 show-size-column=true
 show-type-column=true
 sidebar-width=252
@@ -1465,7 +1465,7 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(0, 29)
+window-position=(26, 23)
 window-size=(1665, 902)
 
 [org/yorba/shotwell/preferences/export]
