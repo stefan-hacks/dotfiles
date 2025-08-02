@@ -1417,7 +1417,7 @@ locations=[<(uint32 2, <('Beijing', 'ZBAA', true, [(0.69696814214530467, 2.02952
 [org/gnome/software]
 check-timestamp=int64 1753465269
 first-run=false
-flatpak-purge-timestamp=int64 1754021598
+flatpak-purge-timestamp=int64 1754147322
 install-timestamp=int64 1752986365
 online-updates-timestamp=int64 1746976000
 update-notification-timestamp=int64 1752988283

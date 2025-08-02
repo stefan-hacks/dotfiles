@@ -1,0 +1,425 @@
+---
+# ansible-bootstrap-kali.yml
+- name: Bootstrap Kali Linux System
+  hosts: localhost
+  become: yes
+  gather_facts: true
+  vars:
+    user: "{{ ansible_user_id }}"
+    home: "{{ ansible_env.HOME }}"
+    dotfiles_repo: "https://github.com/stefan-hacks/dotfiles.git"
+    excluded_apt_patterns:
+      - balena-etcher
+      - mullvad-vpn
+      - net\.downloadhelper\.coapp
+      - popcorn-time
+      - ulauncher
+      - 'virtualbox-.*'
+
+  tasks:
+    - name: Validate Wayland setup (Kali documentation)
+      uri:
+        url: https://www.kali.org/docs/general-use/wayland/
+        status_code: 200
+      changed_when: false
+      tags: [wayland]
+
+    - name: Validate kernel hardening docs
+      uri:
+        url: https://www.kali.org/docs/general-use/kernel-configuration/
+        status_code: 200
+      changed_when: false
+      tags: [kernel]
+
+    - name: Set default shells
+      block:
+        - name: Set user shell to bash
+          user:
+            name: "{{ user }}"
+            shell: /bin/bash
+
+        - name: Set root shell to bash
+          user:
+            name: root
+            shell: /bin/bash
+      tags: [shell]
+
+    - name: Configure sudo prompt
+      copy:
+        dest: /etc/sudoers.d/00_prompt_lock
+        content: 'Defaults passprompt="[sudo] password for %u:  "'
+        validate: 'visudo -cf %s'
+      tags: [sudo]
+
+    - name: Add contrib/non-free repos
+      lineinfile:
+        path: /etc/apt/sources.list
+        regexp: '^(deb .* kali-rolling main)'
+        line: '\1 contrib non-free'
+        backrefs: yes
+      notify: Update APT cache
+      tags: [repos]
+
+    - name: Install essential packages
+      apt:
+        name: 
+          - stow
+          - git
+          - gh
+          - curl
+          - gawk
+          - cmake
+          - linux-headers-{{ ansible_kernel }}
+          - kitty
+          - fail2ban
+          - python3-systemd
+        state: present
+      notify: Update APT cache
+      tags: [base]
+
+    - name: Remove unwanted packages
+      apt:
+        name:
+          - audacity
+          - gimp
+          - gnome-games
+          - libreoffice.*
+        state: absent
+        purge: yes
+      tags: [cleanup]
+
+    - name: Setup dotfiles
+      block:
+        - name: Create gitprojects directory
+          file:
+            path: "{{ home }}/gitprojects"
+            state: directory
+            mode: '0755'
+
+        - name: Clone dotfiles repository
+          git:
+            repo: "{{ dotfiles_repo }}"
+            dest: "{{ home }}/dotfiles"
+            version: main
+
+        - name: Stow dotfiles
+          command: "stow --adopt ."
+          args:
+            chdir: "{{ home }}/dotfiles"
+          become: no
+
+        - name: Restore dotfiles state
+          command: "git restore ."
+          args:
+            chdir: "{{ home }}/dotfiles"
+          become: no
+      tags: [dotfiles]
+
+    - name: Filter APT package list
+      block:
+        - name: Read apt_list.bak
+          slurp:
+            src: "{{ home }}/dotfiles/backups/apt_list.bak"
+          register: apt_list
+
+        - name: Filter packages
+          set_fact:
+            filtered_apt_pkgs: >-
+              {{ apt_list.content | b64decode | split('\n')
+              | reject('match', excluded_apt_patterns | join('|')) 
+              | list }}
+      tags: [packages]
+
+    - name: Install filtered APT packages
+      apt:
+        name: "{{ filtered_apt_pkgs }}"
+        state: present
+      register: apt_install
+      ignore_errors: yes
+      changed_when: apt_install is success
+      tags: [packages]
+
+    - name: Set kitty as default terminal
+      alternatives:
+        name: x-terminal-emulator
+        path: /usr/bin/kitty
+        priority: 100
+      tags: [terminal]
+
+    - name: Configure GNOME terminal fallback
+      block:
+        - name: Backup gnome-terminal
+          command: mv /usr/bin/gnome-terminal /usr/bin/gnome-terminal.bak
+          args:
+            creates: /usr/bin/gnome-terminal.bak
+
+        - name: Create kitty wrapper
+          copy:
+            dest: /usr/bin/gnome-terminal
+            content: |
+              #!/bin/bash
+              exec kitty "$@"
+            mode: '0755'
+      tags: [terminal]
+
+    - name: Configure fail2ban
+      block:
+        - name: Copy fail2ban config
+          copy:
+            src: /etc/fail2ban/fail2ban.conf
+            dest: /etc/fail2ban/fail2ban.local
+            remote_src: yes
+
+        - name: Copy jail config
+          copy:
+            src: /etc/fail2ban/jail.conf
+            dest: /etc/fail2ban/jail.local
+            remote_src: yes
+
+        - name: Configure jail settings
+          replace:
+            path: /etc/fail2ban/jail.local
+            regexp: '^(enabled|backend) = .*'
+            replace: |-
+              \1 = true
+              backend = systemd
+            after: '\[sshd\]'
+      notify:
+        - Enable fail2ban
+        - Start fail2ban
+      tags: [security]
+
+    - name: Setup Kanata
+      block:
+        - name: Create uinput group
+          group:
+            name: uinput
+            state: present
+
+        - name: Add user to input groups
+          user:
+            name: "{{ user }}"
+            groups: input,uinput
+            append: yes
+
+        - name: Configure udev rules
+          copy:
+            dest: /etc/udev/rules.d/99-input.rules
+            content: |
+              KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+
+        - name: Load uinput module
+          modprobe:
+            name: uinput
+            state: present
+
+        - name: Create systemd service
+          copy:
+            dest: "{{ home }}/.config/systemd/user/kanata.service"
+            content: |
+              [Unit]
+              Description=Kanata keyboard remapper
+              Documentation=https://github.com/jtroo/kanata
+
+              [Service]
+              Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:{{ home }}/.cargo/bin
+              Environment=DISPLAY=:0
+              Type=simple
+              ExecStart=/usr/bin/sh -c 'exec $(which kanata) --cfg ${HOME}/.config/kanata/kanata.kbd'
+              Restart=no
+
+              [Install]
+              WantedBy=default.target
+          become: no
+
+        - name: Reload user daemon
+          command: systemctl --user daemon-reload
+          become: no
+
+        - name: Enable Kanata service
+          command: systemctl --user enable kanata.service
+          become: no
+
+        - name: Start Kanata service
+          command: systemctl --user start kanata.service
+          become: no
+      tags: [kanata]
+
+    - name: Configure UFW
+      ufw:
+        rule: "{{ item.rule }}"
+        direction: "{{ item.direction | default('in') }}"
+        proto: "{{ item.proto | default('tcp') }}"
+        port: "{{ item.port }}"
+        state: "{{ item.state | default('enabled') }}"
+      loop:
+        - { port: '22', rule: limit }
+        - { port: '80', rule: allow }
+        - { port: '443', rule: allow }
+        - { direction: in, rule: deny }
+        - { direction: out, rule: allow }
+      tags: [security]
+
+    - name: Install Hack Nerd Font
+      block:
+        - name: Create fonts directory
+          file:
+            path: "{{ home }}/.local/share/fonts"
+            state: directory
+            mode: '0755'
+          become: no
+
+        - name: Download Hack font
+          get_url:
+            url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
+            dest: /tmp/Hack.zip
+
+        - name: Extract font
+          unarchive:
+            src: /tmp/Hack.zip
+            dest: "{{ home }}/.local/share/fonts"
+            remote_src: yes
+            owner: "{{ user }}"
+            group: "{{ user }}"
+          become: no
+
+        - name: Update font cache
+          command: fc-cache -fv
+          become: no
+      tags: [fonts]
+
+    - name: Install ble.sh
+      block:
+        - name: Clone repository
+          git:
+            repo: https://github.com/akinomyoga/ble.sh.git
+            dest: "{{ home }}/ble.sh"
+            version: v1.0.0
+            depth: 1
+
+        - name: Build ble.sh
+          make:
+            chdir: "{{ home }}/ble.sh"
+            target: install
+            params:
+              PREFIX: "{{ home }}/.local"
+          become: no
+
+        - name: Add to bashrc
+          lineinfile:
+            path: "{{ home }}/.bashrc"
+            line: 'source ~/.local/share/blesh/ble.sh'
+            create: yes
+          become: no
+      tags: [shell]
+
+    - name: Install Tela-circle-icons
+      block:
+        - name: Clone repository
+          git:
+            repo: https://github.com/vinceliuice/Tela-circle-icon-theme.git
+            dest: "{{ home }}/Downloads/Tela-circle-icon-theme"
+
+        - name: Run install script
+          command: "{{ home }}/Downloads/Tela-circle-icon-theme/install.sh"
+          args:
+            chdir: "{{ home }}/Downloads/Tela-circle-icon-theme"
+          become: no
+      tags: [themes]
+
+    - name: Install GRUB theme
+      block:
+        - name: Clone themes repo
+          git:
+            repo: https://github.com/vinceliuice/grub2-themes.git
+            dest: "{{ home }}/gitprojects/grub2-themes"
+
+        - name: Copy wallpaper
+          copy:
+            src: "{{ home }}/Pictures/wallpapers/wallpaper_023.jpg"
+            dest: "{{ home }}/gitprojects/grub2-themes/background.jpg"
+            remote_src: yes
+          become: no
+
+        - name: Run install script
+          command: "{{ home }}/gitprojects/grub2-themes/install.sh -s 1080p -b -t whitesur"
+          args:
+            chdir: "{{ home }}/gitprojects/grub2-themes"
+      tags: [grub]
+
+    - name: Configure GRUB
+      block:
+        - name: Set GRUB timeout
+          lineinfile:
+            path: /etc/default/grub
+            regexp: '^GRUB_TIMEOUT='
+            line: 'GRUB_TIMEOUT=2'
+
+        - name: Add kernel parameters
+          lineinfile:
+            path: /etc/default/grub
+            insertafter: '^GRUB_CMDLINE_LINUX_DEFAULT='
+            line: 'GRUB_CMDLINE_LINUX="rhgb quiet mitigations=off"'
+
+        - name: Update GRUB
+          command: update-grub
+
+        - name: Update initramfs
+          command: update-initramfs -u -k all
+      tags: [grub]
+
+    - name: Install Alfa wireless driver
+      block:
+        - name: Clone driver repo
+          git:
+            repo: https://github.com/aircrack-ng/rtl8812au.git
+            dest: "{{ home }}/gitprojects/rtl8812au"
+
+        - name: Install driver
+          make:
+            chdir: "{{ home }}/gitprojects/rtl8812au"
+            target: dkms_install
+      tags: [drivers]
+
+    - name: Restore GNOME settings
+      command: dconf load / < "{{ home }}/dotfiles/backups/gnome_settings.bak"
+      become: no
+      tags: [gnome]
+
+    - name: Apply kernel hardening
+      sysctl:
+        name: "{{ item.key }}"
+        value: "{{ item.value }}"
+        sysctl_set: yes
+        reload: yes
+        state: present
+      loop:
+        - { key: 'kernel.kptr_restrict', value: '2' }
+        - { key: 'kernel.dmesg_restrict', value: '1' }
+        - { key: 'kernel.perf_event_paranoid', value: '3' }
+        - { key: 'kernel.unprivileged_bpf_disabled', value: '1' }
+        - { key: 'net.core.bpf_jit_harden', value: '2' }
+        - { key: 'dev.tty.ldisc_autoload', value: '0' }
+        - { key: 'vm.unprivileged_userfaultfd', value: '0' }
+        - { key: 'kernel.kexec_load_disabled', value: '1' }
+        - { key: 'kernel.sysrq', value: '4' }
+        - { key: 'kernel.unprivileged_userns_clone', value: '0' }
+        - { key: 'kernel.perf_event_max_sample_rate', value: '1' }
+        - { key: 'kernel.perf_cpu_time_max_percent', value: '1' }
+        - { key: 'kernel.core_pattern', value: '|/bin/false' }
+      tags: [kernel]
+
+  handlers:
+    - name: Update APT cache
+      apt:
+        update_cache: yes
+
+    - name: Enable fail2ban
+      systemd:
+        name: fail2ban
+        enabled: yes
+
+    - name: Start fail2ban
+      systemd:
+        name: fail2ban
+        state: started
