@@ -34,7 +34,7 @@
 2. **Run** with:
    ```bash
    sudo apt update
-   sudo apt install -y ansible git
+   sudo apt install -y ansible git stow
    ansible-playbook ansible-bootstrap-kali.yml
    ```
 
