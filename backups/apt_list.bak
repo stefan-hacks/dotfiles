@@ -12,6 +12,8 @@ alsa-utils
 amass
 amass-common
 amd64-microcode
+ansible
+ansible-core
 apache2
 apache2-bin
 apache2-data
@@ -2533,6 +2535,7 @@ python3-html2text
 python3-html5lib
 python3-httpagentparser
 python3-httpcore
+python3-httplib2
 python3-httpx
 python3-humanize
 python3-hupper
@@ -2556,6 +2559,7 @@ python3-jaraco.functools
 python3-jaraco.text
 python3-jedi
 python3-jinja2
+python3-jmespath
 python3-jq
 python3-json-pointer
 python3-jsonschema
@@ -2563,6 +2567,7 @@ python3-jsonschema-specifications
 python3-jwcrypto
 python3-jwt
 python3-kaitaistruct
+python3-kerberos
 python3-kismetcapturebtgeiger
 python3-kismetcapturefreaklabszigbee
 python3-kismetcapturertl433
@@ -2576,6 +2581,7 @@ python3-ldb
 python3-legacy-cgi
 python3-legacycrypt
 python3-levenshtein
+python3-libcloud
 python3-libnmap
 python3-limits
 python3-linkify-it
@@ -2740,6 +2746,8 @@ python3-reportbug
 python3-repoze.lru
 python3-requests
 python3-requests-file
+python3-requests-ntlm
+python3-resolvelib
 python3-retrying
 python3-rfc3339-validator
 python3-rfc3986-validator
@@ -2755,6 +2763,7 @@ python3-scapy
 python3-scipy
 python3-secretsocks
 python3-secure
+python3-selinux
 python3-serial
 python3-serial-asyncio
 python3-service-identity
@@ -2859,6 +2868,7 @@ python3-werkzeug
 python3-wheel
 python3-whois
 python3-winacl
+python3-winrm
 python3-wrapt
 python3-wsaccel
 python3-wsproto
