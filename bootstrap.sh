@@ -28,7 +28,7 @@ sudo chsh -s /bin/bash root
 
 # Improve sudo password prompt
 log "Customizing sudo password prompt..."
-echo 'Defaults passprompt="[sudo] password for %u: 🔒 "' | sudo tee /etc/sudoers.d/00_prompt_lock > /dev/null
+echo 'Defaults passprompt="[sudo] password for %u:  "' | sudo tee /etc/sudoers.d/00_prompt_lock > /dev/null
 
 # Change default terminal to Kitty
 log "Changing default terminal to Kitty..."
