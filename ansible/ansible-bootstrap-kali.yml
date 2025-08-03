@@ -17,7 +17,7 @@
       - 'virtualbox-.*'
 
   tasks:
-    - name: Validate Wayland setup (Kali documentation)
+    - name: Validate Wayland setup
       uri:
         url: https://www.kali.org/docs/general-use/wayland/
         status_code: 200
@@ -77,15 +77,28 @@
       notify: Update APT cache
       tags: [base]
 
-    - name: Remove unwanted packages
-      apt:
-        name:
-          - audacity
-          - gimp
-          - gnome-games
-          - libreoffice.*
-        state: absent
-        purge: yes
+    - name: Safely remove unwanted packages
+      block:
+        - name: Check if packages are installed
+          command: "dpkg -l {{ item }}"
+          register: pkg_check
+          ignore_errors: yes
+          changed_when: false
+          loop:
+            - audacity
+            - gimp
+            - gnome-games
+            - libreoffice-core
+          loop_control:
+            loop_var: pkg
+
+        - name: Remove installed packages
+          apt:
+            name: "{{ item.item }}"
+            state: absent
+            purge: yes
+          loop: "{{ pkg_check.results }}"
+          when: item.rc == 0
       tags: [cleanup]
 
     - name: Setup dotfiles
