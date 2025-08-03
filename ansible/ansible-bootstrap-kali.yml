@@ -62,7 +62,7 @@
 
     - name: Install essential packages
       apt:
-        name: 
+        name:
           - stow
           - git
           - gh
@@ -73,9 +73,25 @@
           - kitty
           - fail2ban
           - python3-systemd
+          - snapd
+          - flatpak
         state: present
       notify: Update APT cache
       tags: [base]
+
+    - name: Enable Snap and Flatpak
+      block:
+        - name: Start snapd.apparmor
+          systemd:
+            name: snapd.apparmor
+            enabled: yes
+            state: started
+
+        - name: Enable Flathub
+          shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          args:
+            creates: /var/lib/flatpak/repo/flathub
+      tags: [flatpak]
 
     - name: Safely remove unwanted packages
       block:
@@ -115,14 +131,20 @@
             dest: "{{ home }}/dotfiles"
             version: main
 
+        - name: Backup existing .bashrc
+          command: cp -a {{ home }}/.bashrc {{ home }}/.bashrc.bak
+          args:
+            creates: {{ home }}/.bashrc.bak
+          become: no
+
         - name: Stow dotfiles
-          command: "stow --adopt ."
+          shell: "stow --adopt ."
           args:
             chdir: "{{ home }}/dotfiles"
           become: no
 
         - name: Restore dotfiles state
-          command: "git restore ."
+          shell: "git restore ."
           args:
             chdir: "{{ home }}/dotfiles"
           become: no
@@ -161,18 +183,18 @@
 
     - name: Configure GNOME terminal fallback
       block:
-        - name: Backup gnome-terminal
-          command: mv /usr/bin/gnome-terminal /usr/bin/gnome-terminal.bak
-          args:
-            creates: /usr/bin/gnome-terminal.bak
-
-        - name: Create kitty wrapper
+        - name: Create gnome-terminal shim
           copy:
-            dest: /usr/bin/gnome-terminal
+            dest: /usr/local/bin/gnome-terminal
             content: |
               #!/bin/bash
               exec kitty "$@"
             mode: '0755'
+
+        - name: Set gnome-terminal shim as default
+          alternatives:
+            name: x-terminal-emulator
+            path: /usr/local/bin/gnome-terminal
       tags: [terminal]
 
     - name: Configure fail2ban
@@ -193,7 +215,7 @@
           replace:
             path: /etc/fail2ban/jail.local
             regexp: '^(enabled|backend) = .*'
-            replace: |-
+            replace: |
               \1 = true
               backend = systemd
             after: '\[sshd\]'
@@ -226,6 +248,13 @@
             name: uinput
             state: present
 
+        - name: Create systemd user directory
+          file:
+            path: "{{ home }}/.config/systemd/user"
+            state: directory
+            mode: '0755'
+          become: no
+
         - name: Create systemd service
           copy:
             dest: "{{ home }}/.config/systemd/user/kanata.service"
@@ -246,15 +275,15 @@
           become: no
 
         - name: Reload user daemon
-          command: systemctl --user daemon-reload
+          shell: systemctl --user daemon-reexec
           become: no
 
         - name: Enable Kanata service
-          command: systemctl --user enable kanata.service
+          shell: systemctl --user enable kanata.service
           become: no
 
         - name: Start Kanata service
-          command: systemctl --user start kanata.service
+          shell: systemctl --user start kanata.service
           become: no
       tags: [kanata]
 
@@ -326,77 +355,17 @@
           become: no
       tags: [shell]
 
-    - name: Install Tela-circle-icons
+    - name: Restore GNOME settings if backup exists
       block:
-        - name: Clone repository
-          git:
-            repo: https://github.com/vinceliuice/Tela-circle-icon-theme.git
-            dest: "{{ home }}/Downloads/Tela-circle-icon-theme"
+        - name: Check for GNOME settings file
+          stat:
+            path: "{{ home }}/dotfiles/backups/gnome_settings.bak"
+          register: gnome_settings_file
 
-        - name: Run install script
-          command: "{{ home }}/Downloads/Tela-circle-icon-theme/install.sh"
-          args:
-            chdir: "{{ home }}/Downloads/Tela-circle-icon-theme"
+        - name: Restore GNOME settings
+          command: "dconf load / < {{ home }}/dotfiles/backups/gnome_settings.bak"
+          when: gnome_settings_file.stat.exists
           become: no
-      tags: [themes]
-
-    - name: Install GRUB theme
-      block:
-        - name: Clone themes repo
-          git:
-            repo: https://github.com/vinceliuice/grub2-themes.git
-            dest: "{{ home }}/gitprojects/grub2-themes"
-
-        - name: Copy wallpaper
-          copy:
-            src: "{{ home }}/Pictures/wallpapers/wallpaper_023.jpg"
-            dest: "{{ home }}/gitprojects/grub2-themes/background.jpg"
-            remote_src: yes
-          become: no
-
-        - name: Run install script
-          command: "{{ home }}/gitprojects/grub2-themes/install.sh -s 1080p -b -t whitesur"
-          args:
-            chdir: "{{ home }}/gitprojects/grub2-themes"
-      tags: [grub]
-
-    - name: Configure GRUB
-      block:
-        - name: Set GRUB timeout
-          lineinfile:
-            path: /etc/default/grub
-            regexp: '^GRUB_TIMEOUT='
-            line: 'GRUB_TIMEOUT=2'
-
-        - name: Add kernel parameters
-          lineinfile:
-            path: /etc/default/grub
-            insertafter: '^GRUB_CMDLINE_LINUX_DEFAULT='
-            line: 'GRUB_CMDLINE_LINUX="rhgb quiet mitigations=off"'
-
-        - name: Update GRUB
-          command: update-grub
-
-        - name: Update initramfs
-          command: update-initramfs -u -k all
-      tags: [grub]
-
-    - name: Install Alfa wireless driver
-      block:
-        - name: Clone driver repo
-          git:
-            repo: https://github.com/aircrack-ng/rtl8812au.git
-            dest: "{{ home }}/gitprojects/rtl8812au"
-
-        - name: Install driver
-          make:
-            chdir: "{{ home }}/gitprojects/rtl8812au"
-            target: dkms_install
-      tags: [drivers]
-
-    - name: Restore GNOME settings
-      command: dconf load / < "{{ home }}/dotfiles/backups/gnome_settings.bak"
-      become: no
       tags: [gnome]
 
     - name: Apply kernel hardening
