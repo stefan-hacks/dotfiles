@@ -12,16 +12,12 @@ log() {
     echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')] $*"
 }
 
-check_command() {
-    command -v "$1" &>/dev/null || { log "Missing required command: $1"; exit 1; }
-}
-
 # --- System Setup Functions ---
 install_essentials() {
     log "Installing essential dependencies..."
     sudo apt update -y
     sudo apt install -y git stow curl gawk cmake build-essential \
-        linux-headers-$(uname -r) unzip
+        linux-headers-$(uname -r) unzip gdebi-core
 }
 
 configure_system() {
@@ -42,14 +38,18 @@ enable_wayland() {
     log "Enabling Wayland session..."
     # Create directory and symlink to disable Wayland block
     sudo mkdir -p /etc/systemd/system/gdm.service.d
-    sudo ln -sf /dev/null /etc/systemd/system/gdm.service.d/disable-wayland.conf
+    sudo tee /etc/systemd/system/gdm.service.d/disable-wayland.conf > /dev/null <<EOL
+[Service]
+Environment=GDM_BACKEND=wayland
+EOL
+    sudo systemctl daemon-reload
 }
 
 harden_kernel() {
     log "Applying kernel hardening..."
     # Create sysctl hardening config
     cat <<EOF | sudo tee /etc/sysctl.d/99-kali-hardening.conf >/dev/null
-# Kernel security parameters :cite[2]:cite[5]:cite[9]
+# Kernel security parameters 
 kernel.kptr_restrict=2
 kernel.dmesg_restrict=1
 kernel.perf_event_paranoid=3
@@ -82,7 +82,7 @@ EOF
 
 remove_bloatware() {
     log "Removing unnecessary packages..."
-    # Removed libreoffice per user request :cite[4]
+    # Removed libreoffice per user request 
     sudo apt purge -y audacity gimp gnome-games
 }
 
@@ -107,6 +107,7 @@ filter_package_lists() {
         popcorn-time
         ulauncher
         'virtualbox-*.*'
+        wikiman  # Added to exclusion list as requested
     )
     local pattern=$(IFS="|"; echo "^(${packages[*]})$")
     grep -Ev "$pattern" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
@@ -125,6 +126,15 @@ install_apt_packages() {
             failed_apt+=("$pkg")
         fi
     done < "$apt_list"
+}
+
+install_wikiman() {
+    log "Installing wikiman from GitHub release..."
+    local temp_dir=$(mktemp -d)
+    wget -q -O "$temp_dir/wikiman.deb" \
+        "https://github.com/filiparag/wikiman/releases/latest/download/wikiman_$(curl -s https://api.github.com/repos/filiparag/wikiman/releases/latest | grep tag_name | cut -d '"' -f 4)_all.deb"
+    sudo gdebi -n "$temp_dir/wikiman.deb"
+    rm -rf "$temp_dir"
 }
 
 # --- Security Services ---
@@ -281,6 +291,7 @@ remove_bloatware
 setup_dotfiles
 filter_package_lists
 install_apt_packages
+install_wikiman  # Install wikiman separately after APT packages
 setup_flatpak
 setup_snap
 setup_kitty
