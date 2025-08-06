@@ -1,4 +1,6 @@
-bootstrap_complete.sh
+bootstrap_debian.sh
+bootstrap_kali.sh
+bootstrap.bak
 sys_admin
 apt_list.bak
 change_default_kali_terminal.md
