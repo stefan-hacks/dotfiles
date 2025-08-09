@@ -388,6 +388,7 @@ gnome-system-monitor
 gnome-terminal
 gnome-terminal-data
 gnome-text-editor
+gnome-themes-extra
 gnome-themes-extra-data
 gnome-tour
 gnome-tweaks
@@ -435,6 +436,7 @@ gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
 gstreamer1.0-x
 gtk-update-icon-cache
+gtk2-engines-pixbuf
 gvfs
 gvfs-backends
 gvfs-common
@@ -859,6 +861,8 @@ libfwnt1t64
 libfwsi1t64
 libfwupd3
 libgail-3-0t64
+libgail-common
+libgail18t64
 libgav1-1
 libgbm1
 libgc1
@@ -970,6 +974,7 @@ libgtk-4-media-gstreamer
 libgtk-vnc-2.0-0
 libgtk2.0-0
 libgtk2.0-0t64
+libgtk2.0-bin
 libgtk2.0-common
 libgtk3-perl
 libgtkmm-4.0-0
@@ -2448,6 +2453,7 @@ vdpau-driver-all
 vim-common
 vim-tiny
 vinetto
+virtualbox-7.1
 vlc
 vlc-bin
 vlc-data

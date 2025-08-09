@@ -1,3 +1,4 @@
+abseil
 alsa-lib
 aom
 aribb24
@@ -159,6 +160,7 @@ pcre2
 pixman
 pkgconf
 pmix
+protobuf
 pulseaudio
 python@3.13
 rav1e
@@ -166,6 +168,7 @@ readline
 ripgrep
 rtmpdump
 rubberband
+rust
 sdl2
 shaderc
 shared-mime-info
