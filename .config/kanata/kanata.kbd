@@ -1,0 +1,144 @@
+(defcfg
+  process-unmapped-keys yes
+  log-layer-changes no
+)
+
+;; Variables
+(defvar
+ tap-time 200
+ hold-time 200
+)
+
+;; Defsrc contains the original unmapped keyboard layout. Often this is qwerty.
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12 
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; Aliases
+(defalias
+  l2 (tap-hold $tap-time $hold-time lmet (layer-toggle two))   
+  l3 (tap-hold $tap-time $hold-time spc (layer-toggle three)) 
+  ss (tap-hold $tap-time $hold-time s lmet)
+  dd (tap-hold $tap-time $hold-time d lalt)
+  ff (tap-hold $tap-time $hold-time f lctl)
+  hh (tap-hold $tap-time $hold-time h S-grv)
+  jj (tap-hold $tap-time $hold-time j rctl)
+  kk (tap-hold $tap-time $hold-time k ralt)
+  ll (tap-hold $tap-time $hold-time l rmet)
+  la (tap-hold $tap-time $hold-time bspc del)
+  ra (tap-hold $tap-time $hold-time ret ralt)
+  qtd (tap-hold $tap-time $hold-time f1 C-A-q)
+  pum (tap-hold $tap-time $hold-time f2 A-f2)
+  dsb (tap-hold $tap-time $hold-time f3 C-M-down) 
+  isb (tap-hold $tap-time $hold-time f4 C-M-up)
+  mut (tap-hold $tap-time $hold-time f5 A-f5)
+  vdn (tap-hold $tap-time $hold-time f6 A-f6)
+  vup (tap-hold $tap-time $hold-time f7 A-f7)
+  mic (tap-hold $tap-time $hold-time f8 A-f8)
+  psc (tap-hold $tap-time $hold-time f9 A-f9)
+  lts (tap-hold $tap-time $hold-time f10 C-A-M-l)
+  gm (tap-hold $tap-time $hold-time grv S-grv)
+  1m (tap-hold $tap-time $hold-time 1 S-1)
+  2m (tap-hold $tap-time $hold-time 2 S-2)
+  3m (tap-hold $tap-time $hold-time 3 S-3)
+  4m (tap-hold $tap-time $hold-time 4 S-4)
+  5m (tap-hold $tap-time $hold-time 5 S-5)
+  6m (tap-hold $tap-time $hold-time 6 S-6)
+  7m (tap-hold $tap-time $hold-time 7 S-7)
+  8m (tap-hold $tap-time $hold-time 8 S-8)
+  9m (tap-hold $tap-time $hold-time 9 S-9)
+  0m (tap-hold $tap-time $hold-time 0 S-0)
+  mi (tap-hold $tap-time $hold-time - S--)
+  pl (tap-hold $tap-time $hold-time = S-=)
+  qq (tap-hold $tap-time $hold-time q C-q)
+  ww (tap-hold $tap-time $hold-time w C-w)  
+  ee (tap-hold $tap-time $hold-time e C-e)
+  rr (tap-hold $tap-time $hold-time r C-r)
+  tt (tap-hold $tap-time $hold-time t C-t)
+  yy (tap-hold $tap-time $hold-time y home) 
+  uu (tap-hold $tap-time $hold-time u pgdn)
+  ii (tap-hold $tap-time $hold-time i pgup)
+  oo (tap-hold $tap-time $hold-time o end)
+  pp (tap-hold $tap-time $hold-time C-M-/ C-M-/)
+  pt (tap-hold $tap-time $hold-time C-M-, C-M-,)
+  nt (tap-hold $tap-time $hold-time C-M-. C-M-.)
+  w1 (tap-hold $tap-time $hold-time A-M-1 A-M-1)
+  w2 (tap-hold $tap-time $hold-time A-M-2 A-M-2)
+  w3 (tap-hold $tap-time $hold-time A-M-3 A-M-3)
+  w4 (tap-hold $tap-time $hold-time A-M-4 A-M-4)
+  so (tap-hold $tap-time $hold-time [ S-[)
+  sc (tap-hold $tap-time $hold-time ] S-])
+  pi (tap-hold $tap-time $hold-time \ S-\)
+  aa (tap-hold $tap-time $hold-time a C-a)
+  se (tap-hold $tap-time $hold-time ; S-;)
+  ap (tap-hold $tap-time $hold-time ' S-')
+  zz (tap-hold $tap-time $hold-time z C-z)
+  xx (tap-hold $tap-time $hold-time x C-x)
+  cc (tap-hold $tap-time $hold-time c C-c)
+  vv (tap-hold $tap-time $hold-time v C-v)
+  co (tap-hold $tap-time $hold-time , S-,)
+  fu (tap-hold $tap-time $hold-time . S-.)
+  fs (tap-hold $tap-time $hold-time / S-/)
+  tbd (tap-hold $tap-time $hold-time , C-w)
+  tfd (tap-hold $tap-time $hold-time . A-d)
+  dtb (tap-hold $tap-time $hold-time [ C-u)
+  dte (tap-hold $tap-time $hold-time ] C-k)
+  dwb (tap-hold $tap-time $hold-time , C-bspc)
+  dwf (tap-hold $tap-time $hold-time . C-del)
+  dsl (tap-hold $tap-time $hold-time A-f11 A-f11)
+  dsr (tap-hold $tap-time $hold-time A-f12 A-f12)
+  bdl (tap-hold $tap-time $hold-time [ C-bspc)
+  fdl (tap-hold $tap-time $hold-time ] S-C-del)
+  wtl (tap-hold $tap-time $hold-time S-M-pgup S-M-pgup)
+  wtr (tap-hold $tap-time $hold-time S-M-pgdn S-M-pgdn)
+  rpl (tap-hold $tap-time $hold-time M-left M-left)
+  rpd (tap-hold $tap-time $hold-time M-down M-down)
+  rpu (tap-hold $tap-time $hold-time M-up M-up)
+  rpr (tap-hold $tap-time $hold-time M-rght M-rght)
+  mpp (tap-hold $tap-time $hold-time C-M-/ C-M-/)
+  msf (tap-hold $tap-time $hold-time C-M-. C-M-.)
+  msb (tap-hold $tap-time $hold-time C-M-, C-M-,)
+  mwl (mwheel-left 50 120)
+  mwd (mwheel-down 50 120)
+  mwu (mwheel-up 50 120)
+  mwr (mwheel-right 50 120)
+)
+
+;; LAYER ONE - main mods
+(deflayer one
+  caps @qtd @pum @dsb @isb @mut @vdn @vup @mic @psc @lts f11  f12
+  @gm  @1m  @2m  @3m  @4m  @5m  @6m  @7m  @8m  @9m  @0m  @mi  @pl  bspc
+  tab  @qq  @ww  e    @rr  @tt  @yy  @uu  @ii  @oo  p    @so  @sc  @pi
+  esc  @aa  @ss  @dd  @ff  g    @hh  @jj  @kk  @ll  @se  @ap  ret
+  lsft @zz  @xx  @cc  @vv  b    n    m    @co  @fu  @fs  rsft
+  lctl @l2  @la           @l3             @ra  _    _
+)
+
+;; Workspaces, Windows, Panes layer - left hand on left Ctrl key  
+(deflayer two 
+  caps _    _    _    _    _    _    _    _    _    _    _    lrld
+  grv  _    _    _    _    _    6    7    8    9    0    _    _    bspc
+  tab  _    _    _    _    _    @wtl @dsl @dsr @wtr @pp  @pt  @nt  \
+  esc  _    _    _    _    _    @rpl @rpd @rpu @rpr _    _  ret
+  lsft _    _    _    _    _    @w1  @w2  @w3  @w4  _    rsft
+  _    _    _           _                 _    _    _
+)
+
+
+;; Editing - text and terminal editing layer - spacebar held               
+(deflayer three                                                           
+  caps @qtd @pum @dsb @isb @mut @vdn @vup @mic @psc @lts _    _      
+  grv  _    _    _    _    _    _    _    _    _    _    _    _    bspc 
+  tab  _    _    _    _    _    @mwl @mwd @mwu @mwr p    @dtb @dte _    
+  esc  _    _    _    _    _    left down up   rght bspc del  ret       
+  lsft _    _    _    _    _    @dwb @dwf @tbd @tfd _    rsft           
+  _    _    _           _                 _    _    _                   
+)
+
+;; lrld is a default shortcut to reload the configuration found on layer 2 in place of f12 
+
