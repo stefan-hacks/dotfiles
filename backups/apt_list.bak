@@ -276,6 +276,7 @@ gir1.2-geoclue-2.0
 gir1.2-geocodeglib-2.0
 gir1.2-girepository-2.0
 gir1.2-glib-2.0
+gir1.2-gmenu-3.0
 gir1.2-gnomebg-4.0
 gir1.2-gnomebluetooth-3.0
 gir1.2-gnomedesktop-4.0
@@ -904,6 +905,7 @@ libgnome-bluetooth-3.0-13
 libgnome-bluetooth-ui-3.0-13
 libgnome-desktop-3-20t64
 libgnome-desktop-4-2t64
+libgnome-menu-3-0
 libgnome-rr-4-2t64
 libgnutls-dane0t64
 libgnutls-openssl27t64
