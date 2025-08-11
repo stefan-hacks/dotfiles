@@ -418,7 +418,6 @@ gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
 gstreamer1.0-x
 gtk-update-icon-cache
-gtk2-engines-murrine
 gtk2-engines-pixbuf
 gvfs
 gvfs-backends
@@ -2527,11 +2526,6 @@ xterm
 xwayland
 xz-utils
 yara
-yaru-theme-gnome-shell
-yaru-theme-gtk
-yaru-theme-icon
-yaru-theme-sound
-yaru-theme-unity
 yelp
 yelp-xsl
 yt-dlp

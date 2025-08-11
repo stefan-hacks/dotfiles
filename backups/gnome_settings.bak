@@ -205,8 +205,8 @@ enable-animations=false
 font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Hack Nerd Font 11'
-gtk-theme='Yaru-prussiangreen-dark'
-icon-theme='Yaru-prussiangreen-dark'
+gtk-theme='Adwaita-dark'
+icon-theme='Adwaita'
 locate-pointer=false
 monospace-font-name='Hack Nerd Font Bold 10'
 show-battery-percentage=true
@@ -565,7 +565,7 @@ search-view='list-view'
 [org/gnome/nautilus/window-state]
 initial-size=(1717, 1010)
 initial-size-file-chooser=(1574, 550)
-maximized=false
+maximized=true
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
 last-folder-path='/home/h4ck3r'
@@ -774,7 +774,7 @@ pipeline='pipeline_default'
 style-components=3
 
 [org/gnome/shell/extensions/blur-my-shell/panel]
-blur=false
+blur=true
 brightness=0.80000000000000004
 customize=false
 override-background=true
@@ -992,7 +992,7 @@ autotheme-refresh=true
 balpha=0.38
 bartype='Trilands'
 bcolor=['0.725', '0.835', '0.898']
-bg-change=false
+bg-change=true
 bgalpha=0.0
 bgalpha-wmax=0.52000000000000002
 bgalpha2=0.0
