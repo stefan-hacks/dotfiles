@@ -1136,6 +1136,7 @@ liblwp-mediatypes-perl
 liblwp-protocol-https-perl
 liblz1
 liblz4-1
+liblzf1
 liblzma5
 liblzo2-2
 libmad0
@@ -1420,6 +1421,7 @@ libqt5x11extras5
 libqt6core6t64
 libqt6dbus6
 libqt6gui6
+libqt6help6
 libqt6network6
 libqt6opengl6
 libqt6openglwidgets6
@@ -1431,6 +1433,7 @@ libqt6qmlworkerscript6
 libqt6quick6
 libqt6sql6
 libqt6sql6-sqlite
+libqt6statemachine6
 libqt6svg6
 libqt6test6
 libqt6waylandclient6
@@ -1633,6 +1636,7 @@ libtommath1
 libtotem-plparser-common
 libtotem-plparser18
 libtotem0
+libtpms0
 libtry-tiny-perl
 libts0t64
 libtsan2
@@ -2020,6 +2024,7 @@ pocl-opencl-icd
 polenum
 polkitd
 pompem
+popcorn-time
 poppler-data
 poppler-utils
 power-profiles-daemon
@@ -2444,6 +2449,7 @@ vdpauinfo
 vim-common
 vim-tiny
 vinetto
+virtualbox-7.1
 vlc
 vlc-bin
 vlc-data
