@@ -30,15 +30,8 @@ export TERM=xterm-256color
 # colorize output
 export GRC_ALIASES=true
 
-#Brightness control from keybaord
-gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-up "['<Ctrl><Super>Up']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-down "['<Ctrl><Super>Down']"
-
-# gnome auto-focus
-# gsettings set org.gnome.desktop.wm.preferences auto-raise "true"
-
 #path
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/stefan-hacks/.local/bin:/snap/bin:/home/stefan-hacks/platform-tools
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/
 
 
 # preferred text editor
