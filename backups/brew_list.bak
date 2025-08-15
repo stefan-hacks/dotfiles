@@ -1,3 +1,4 @@
+acl
 aom
 atuin
 bash-language-server
@@ -18,16 +19,19 @@ cmake-language-server
 curl
 dbus
 dotnet@8
+dust
 elfutils
 expat
 eza
 faad2
+fd
 fftw
 fontconfig
 freetype
 fribidi
 gcc
 gdk-pixbuf
+gettext
 giflib
 gitleaks
 glib
@@ -79,7 +83,10 @@ libxml2
 libxrender
 little-cms2
 llvm
+lpeg
 lttng-ust
+luajit
+luv
 lz4
 lzo
 markdown-oxide
@@ -87,6 +94,7 @@ marksman
 mpdecimal
 mpfr
 ncurses
+neovim
 node
 numactl
 onefetch
@@ -115,9 +123,12 @@ taplo
 tealdeer
 tgpt
 thefuck
+tree-sitter
+unibilium
 unzip
 userspace-rcu
 utf8cpp
+utf8proc
 util-linux
 uv
 webp
@@ -125,6 +136,7 @@ xorgproto
 xz
 yaml-language-server
 z3
+zellij
 zlib
 zoxide
 zstd
