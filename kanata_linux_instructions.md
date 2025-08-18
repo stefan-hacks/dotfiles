@@ -71,7 +71,7 @@ Description=Kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
 
 [Service]
-Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
 Environment=DISPLAY=:0
 Type=simple
 ExecStart=/usr/bin/sh -c 'exec $$(which kanata) --cfg $${HOME}/.config/kanata/kanata.kbd'
@@ -79,6 +79,7 @@ Restart=no
 
 [Install]
 WantedBy=default.target
+
 ```
 
 Make sure to update the executable location for sh in the snippet above.
