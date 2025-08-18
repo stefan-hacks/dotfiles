@@ -132,7 +132,7 @@ panel-id='world'
 size=(948, 1035)
 
 [org/gnome/control-center]
-last-panel='multitasking'
+last-panel='keyboard'
 window-state=(1536, 835, false)
 
 [org/gnome/desktop/a11y]
@@ -375,7 +375,7 @@ cycle-group=@as []
 cycle-group-backward=@as []
 cycle-panels=@as []
 cycle-panels-backward=@as []
-maximize=@as []
+maximize=['<Super>Up']
 minimize=@as []
 move-to-monitor-down=@as []
 move-to-monitor-up=@as []
@@ -402,7 +402,7 @@ switch-to-workspace-left=['<Alt>F11']
 switch-to-workspace-right=['<Alt>F12']
 toggle-fullscreen=['<Super>f']
 toggle-maximized=@as []
-unmaximize=@as []
+unmaximize=['<Super>Down']
 
 [org/gnome/desktop/wm/preferences]
 action-double-click-titlebar='none'
@@ -551,8 +551,8 @@ edge-tiling=true
 overlay-key='Super'
 
 [org/gnome/mutter/keybindings]
-toggle-tiled-left=@as []
-toggle-tiled-right=@as []
+toggle-tiled-left=['<Super>Left']
+toggle-tiled-right=['<Super>Right']
 
 [org/gnome/mutter/wayland/keybindings]
 restore-shortcuts=@as []
