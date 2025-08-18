@@ -981,8 +981,6 @@ liblttng-ust-ctl5t64
 liblttng-ust1t64
 liblua5.2-0
 liblua5.4-0
-libluajit-5.1-2
-libluajit-5.1-common
 liblvm2cmd2.03
 liblwp-mediatypes-perl
 liblwp-protocol-https-perl
@@ -1001,7 +999,6 @@ libmailtools-perl
 libmalcontent-0-0
 libmalcontent-ui-1-1
 libmanette-0.2-0
-libmariadb3
 libmarkdown2
 libmath-base85-perl
 libmatroska7
@@ -1173,7 +1170,6 @@ libportal-gtk4-1
 libportal1
 libportaudio2
 libpostproc58
-libpq5
 libproc-processtable-perl
 libproc2-0
 libprotobuf-c1
@@ -1620,7 +1616,6 @@ malcontent-gui
 man-db
 manpages
 manpages-dev
-mariadb-common
 mawk
 media-types
 memtester
@@ -1639,7 +1634,6 @@ mpv
 mullvad-vpn
 mutter-common
 mutter-common-bin
-mysql-common
 mythes-en-us
 nala
 nano
@@ -1847,7 +1841,6 @@ ssl-cert
 stow
 sudo
 switcheroo-control
-sysbench
 sysstat
 system-config-printer-common
 system-config-printer-udev
