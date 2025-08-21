@@ -132,7 +132,7 @@ panel-id='world'
 size=(948, 1035)
 
 [org/gnome/control-center]
-last-panel='background'
+last-panel='display'
 window-state=(1536, 835, false)
 
 [org/gnome/desktop/a11y]
@@ -168,8 +168,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-18-15-26-37-wallpaper_005.jpg'
-picture-uri-dark='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-18-15-26-37-wallpaper_005.jpg'
+picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-20-19-06-26-wallpaper_014.jpg'
+picture-uri-dark='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-20-19-06-26-wallpaper_014.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -350,7 +350,7 @@ daily-limit-enabled=false
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-18-15-26-37-wallpaper_005.jpg'
+picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-20-19-06-26-wallpaper_014.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -610,7 +610,7 @@ last-folder-path='/home/stefan-hacks/Documents'
 last-folder-path='/home/stefan-hacks'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
-last-folder-path='/home/stefan-hacks/Pictures'
+last-folder-path='/home/stefan-hacks/Pictures/wallpapers'
 
 [org/gnome/portal/filechooser/org.gnome.World.PikaBackup]
 last-folder-path='/media/stefan-hacks/backups/backup-ghostly-h4ck3r'
@@ -1417,7 +1417,7 @@ locations=[<(uint32 2, <('Mexico City', 'MMMX', true, [(0.33917564548646723, -1.
 locations=[<(uint32 2, <('Beijing', 'ZBAA', true, [(0.69696814214530467, 2.0295270260429752)], [(0.69689057971334611, 2.0313596217575696)])>)>, <(uint32 2, <('Tokyo', 'RJTI', true, [(0.62191898430954862, 2.4408429589140699)], [(0.62282074357417661, 2.4391218722853854)])>)>, <(uint32 2, <('New Delhi', 'VIDP', true, [(0.49858239547081096, 1.345939747314058)], [(0.49916416607037828, 1.3473941825396225)])>)>, <(uint32 2, <('Sydney', 'YSSY', true, [(-0.59253928105207498, 2.6386469349889961)], [(-0.59137572239964786, 2.6392287230418559)])>)>, <(uint32 2, <('Los Angeles', 'KCQT', true, [(0.59370283970450188, -2.0644336110828618)], [(0.59432360095955872, -2.063741622941031)])>)>, <(uint32 2, <('Toronto', 'CYTZ', true, [(0.76154532446909495, -1.3857914260834978)], [(0.76212711252195475, -1.3860823201099277)])>)>, <(uint32 2, <('Mexico City', 'MMMX', true, [(0.33917564548646723, -1.7296212887263802)], [(0.33919020153242879, -1.7302951778038682)])>)>, <(uint32 2, <('Rio de Janeiro', 'SBRJ', true, [(-0.39968039870670141, -0.75340046626198298)], [(-0.39968039870670141, -0.75456400746111763)])>)>, <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>, <(uint32 2, <('London', 'EGWU', true, [(0.89971722940307675, -0.007272211034407213)], [(0.89884456477707964, -0.0020362232784242244)])>)>, <(uint32 2, <('Paris', 'LFPB', true, [(0.85462956287765413, 0.042760566673861078)], [(0.8528842336256599, 0.040724343395436846)])>)>]
 
 [org/gnome/software]
-check-timestamp=int64 1755543587
+check-timestamp=int64 1755734828
 first-run=false
 flatpak-purge-timestamp=int64 1755662048
 install-timestamp=int64 1752986365

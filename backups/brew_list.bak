@@ -19,12 +19,10 @@ dust
 expat
 eza
 faad2
-fd
 fftw
 fontconfig
 freetype
 fribidi
-fzf
 gcc
 gdk-pixbuf
 giflib
@@ -33,7 +31,6 @@ gmp
 graphite2
 grc
 harfbuzz
-helix
 highway
 hwloc
 icu4c@77
@@ -94,7 +91,6 @@ pixman
 pmix
 python@3.13
 readline
-ripgrep
 rtmpdump
 shared-mime-info
 sqlite
@@ -103,11 +99,9 @@ taglib
 tealdeer
 tgpt
 thefuck
-tmux
 unzip
 userspace-rcu
 utf8cpp
-utf8proc
 util-linux
 uv
 webp
