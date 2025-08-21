@@ -1,5 +1,6 @@
 aom
 atuin
+bash-language-server
 bat
 bat-extras
 berkeley-db@5
@@ -7,6 +8,7 @@ binsider
 binutils
 brotli
 bzip2
+c-ares
 ca-certificates
 cairo
 carapace
@@ -14,6 +16,7 @@ chafa
 curl
 dbus
 dotnet
+dotnet@8
 dug
 dust
 expat
@@ -26,6 +29,7 @@ fribidi
 gcc
 gdk-pixbuf
 giflib
+gitleaks
 glib
 gmp
 graphite2
@@ -41,6 +45,7 @@ jpeg-xl
 kanata
 kew
 krb5
+lazygit
 libavif
 libdeflate
 libedit
@@ -60,6 +65,7 @@ libssh2
 libtiff
 libunistring
 libunwind
+libuv
 libvmaf
 libvorbis
 libx11
@@ -74,10 +80,14 @@ little-cms2
 lttng-ust
 lz4
 lzo
+markdown-oxide
+marksman
 mpdecimal
 mpfr
 ncurses
+node
 numactl
+onefetch
 oniguruma
 open-mpi
 openexr
@@ -93,6 +103,7 @@ python@3.13
 readline
 rtmpdump
 shared-mime-info
+simdjson
 sqlite
 starship
 taglib
