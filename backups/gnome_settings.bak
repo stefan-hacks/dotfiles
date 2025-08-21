@@ -132,7 +132,7 @@ panel-id='world'
 size=(948, 1035)
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='keyboard'
 window-state=(1536, 835, false)
 
 [org/gnome/desktop/a11y]
@@ -607,10 +607,10 @@ last-folder-path='/home/stefan-hacks/Downloads'
 last-folder-path='/home/stefan-hacks/Documents'
 
 [org/gnome/portal/filechooser/org.gnome.Nautilus]
-last-folder-path='/home/stefan-hacks'
+last-folder-path='/home/stefan-hacks/Videos'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
-last-folder-path='/home/stefan-hacks/Pictures/wallpapers'
+last-folder-path='/home/stefan-hacks/Pictures'
 
 [org/gnome/portal/filechooser/org.gnome.World.PikaBackup]
 last-folder-path='/media/stefan-hacks/backups/backup-ghostly-h4ck3r'
@@ -1419,7 +1419,7 @@ locations=[<(uint32 2, <('Beijing', 'ZBAA', true, [(0.69696814214530467, 2.02952
 [org/gnome/software]
 check-timestamp=int64 1755734828
 first-run=false
-flatpak-purge-timestamp=int64 1755662048
+flatpak-purge-timestamp=int64 1755741965
 install-timestamp=int64 1752986365
 online-updates-timestamp=int64 1746976000
 update-notification-timestamp=int64 1755543600
@@ -1467,7 +1467,7 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(0, 25)
+window-position=(128, 47)
 window-size=(1665, 902)
 
 [org/yorba/shotwell/preferences/export]

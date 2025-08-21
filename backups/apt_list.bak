@@ -133,6 +133,7 @@ debianutils
 desktop-base
 desktop-file-utils
 dhcpcd-base
+dict
 dictionaries-common
 diffstat
 diffutils
@@ -1123,6 +1124,7 @@ liblz4-1
 liblzf1
 liblzma5
 liblzo2-2
+libmaa4
 libmad0
 libmagic-mgc
 libmagic1t64
@@ -1431,6 +1433,7 @@ libraw1394-11
 libraw23t64
 libre2-11
 libreadline8t64
+librecode3
 libregexp-wildcards-perl
 libregf1t64
 libregfi1t64
@@ -2247,6 +2250,7 @@ readline-common
 readpe
 realmd
 reaver
+recode
 recoverdm
 recoverjpeg
 reglookup
@@ -2322,6 +2326,7 @@ sound-theme-freedesktop
 speech-dispatcher
 speech-dispatcher-audio-plugins
 speech-dispatcher-espeak-ng
+speedtest-cli
 sphinx-rtd-theme-common
 sploitscan
 sqlite3
@@ -2432,6 +2437,7 @@ wget
 whiptail
 whois
 wifite
+wikipedia2text
 winregfs
 wipe
 wireless-regdb
