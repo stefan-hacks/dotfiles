@@ -88,7 +88,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-dow
 # gsettings set org.gnome.desktop.wm.preferences auto-raise "true"
 
 #path
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/stefan-hacks/.local/bin:/snap/bin:/home/stefan-hacks/platform-tools
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/stefan-hacks/.local/bin:/snap/bin:/home/stefan-hacks/.cargo/bin
 
 
 # preferred text editor
@@ -135,7 +135,6 @@ alias s="kitten ssh"
 eval "$(thefuck --alias)"
 
 # Rust
-#. "$HOME/.cargo/env"
 
 # Atuin
 eval "$(atuin init bash)"
