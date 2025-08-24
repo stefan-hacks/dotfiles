@@ -32,7 +32,7 @@ handle_phase() {
             linux-headers-$(uname -r) curl wget cmake gawk font-manager gnome-clocks \
             gnome-weather gnome-shell-extension-manager gpaste-2 fail2ban ufw snapd flatpak \
             gdebi tor torbrowser-launcher ffmpeg yt-dlp vlc mpv kitty figlet lolcat btop \
-            gir1.2-gtop-2.0 lm-sensors hx nvim fzf ripgrep fd-find
+            gir1.2-gtop-2.0 lm-sensors hx nvim fzf ripgrep fd-find fastfetch cpufetch cmatrix hollywood
 
         # Set default shell
         log "Setting default shell to bash"
