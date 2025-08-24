@@ -132,7 +132,7 @@ panel-id='world'
 size=(948, 1035)
 
 [org/gnome/control-center]
-last-panel='online-accounts'
+last-panel='background'
 window-state=(1536, 835, false)
 
 [org/gnome/desktop/a11y]
@@ -168,8 +168,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-24-01-40-42-wallpaper_009.png'
-picture-uri-dark='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-24-01-40-42-wallpaper_009.png'
+picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-24-01-40-42-wallpaper_014.jpg'
+picture-uri-dark='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-24-01-40-42-wallpaper_014.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -350,7 +350,7 @@ daily-limit-enabled=false
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-24-01-40-42-wallpaper_009.png'
+picture-uri='file:///home/stefan-hacks/.local/share/backgrounds/2025-08-24-01-40-42-wallpaper_014.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -607,7 +607,7 @@ last-folder-path='/home/stefan-hacks/Downloads'
 last-folder-path='/home/stefan-hacks/Documents'
 
 [org/gnome/portal/filechooser/org.gnome.Nautilus]
-last-folder-path='/home/stefan-hacks/VirtualBox VMs'
+last-folder-path='/home/stefan-hacks'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
 last-folder-path='/home/stefan-hacks/Pictures/wallpapers'
@@ -638,7 +638,7 @@ night-light-enabled=true
 night-light-schedule-automatic=false
 night-light-schedule-from=20.0
 night-light-schedule-to=7.0
-night-light-temperature=uint32 2970
+night-light-temperature=uint32 2700
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
@@ -1467,7 +1467,7 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(26, 23)
+window-position=(128, 44)
 window-size=(1665, 902)
 
 [org/yorba/shotwell/preferences/export]
